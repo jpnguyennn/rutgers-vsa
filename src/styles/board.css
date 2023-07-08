@@ -1,0 +1,19 @@
+#board {
+	grid-row-gap: 25px;
+	grid-template-columns: repeat(auto-fit, minmax(375px, 1fr));
+}
+
+#board_port {
+	padding: auto;
+
+	box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.2),
+		0 6px 20px 0 rgba(255, 255, 255, 0.19);
+
+	transition: 0.2s ease-in-out;
+}
+#board_port:hover {
+	transform: scale(1.05);
+}
+#port_container #portrait {
+	border-radius: 40% 15%;
+}

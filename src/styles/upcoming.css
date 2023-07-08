@@ -1,0 +1,31 @@
+/* ----------- UPCOMING ----------- */
+
+.overflow_manage {
+	overflow: hidden;
+}
+
+/* ----------- UPCOMINGMAIN ---------- */
+
+#main_container {
+	border: 3px solid rgba(255, 255, 255, 0.25);
+}
+#post_link {
+	transition: color 0.25s, text-decoration 1s, opacity 0.25s;
+}
+#post_link:hover {
+	color: lightblue;
+}
+
+/* ------------ UPCOMINGADD ----------- */
+
+#load_more {
+	transition: background-color 0.35s, border-color 0.35s, color 0.35s;
+	font-family: var(--font-lato);
+}
+
+#load_more:hover {
+	cursor: pointer;
+	background-color: lightblue;
+	border-color: lightblue;
+	color: white;
+}
