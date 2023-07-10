@@ -4,14 +4,14 @@ import BoardInterns from "@/components/board/BoardInterns";
 import BoardMain from "@/components/board/BoardMain";
 
 async function getBoardData() {
-	const response = await fetch("http://127.0.0.1:8000/api/board", {
+	const response = await fetch("http://ruvsa-api.vercel.app/api/board", {
 		cache: "no-store",
 	});
 	return response.json();
 }
 
 async function getInternData() {
-	const response = await fetch("http://127.0.0.1:8000/api/interns", {
+	const response = await fetch("http://ruvsa-api.vercel.app/api/interns", {
 		cache: "no-store",
 	});
 	return response.json();
