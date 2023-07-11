@@ -1,113 +1,106 @@
-import Image from 'next/image'
+import { Upcoming } from "@/components/upcoming/Upcoming";
+import Head from "next/head";
+import Image from "next/image";
+import React from "react";
+import "./home.css";
 
-export default function Front() {
-  return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
+export default function Home() {
+	const stt = require("@/images/stt.jpg");
+	const missasia = require("@/images/missasia.jpg");
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore the Next.js 13 playground.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+	return (
+		<>
+			<div>
+				<div
+					className="hero-bg h-screen min-h-screen flex justify-center items-center"
+					id="hero"
+				>
+					<div className="text-white bg-[rgba(249,241,241,0.25)] py-24 px-12 max-w-4xl border-2 border-white border-solid flex-col text-center">
+						<h1 className="text-[4rem] font-titles font-bold">
+							RUTGERS VIETNAMESE STUDENT ASSOCIATION
+						</h1>
+						<p className="text-[1.5rem]">
+							Welcome to the RUVSA webpage! Enjoy your stay and explore what our
+							organization has to offer.
+						</p>
+					</div>
+				</div>
+				<div
+					className="m-auto min-h-[600px] grid max-w-4xl content-center text-center"
+					id="about"
+				>
+					<div className="m-13 mb-10 text-5xl font-titles">
+						<h1>About Rutgers VSA</h1>
+					</div>
+					<div className="py-0 px-20 text-[1.05em]">
+						<p className="leading-10">
+							Our mission in the Vietnamese Student Association (VSA) at Rutgers
+							University is to promote awareness and appreciation of the
+							Vietnamese culture. VSA is open to people of all cultures,
+							ethnicities, and backgrounds, and encourages any person that is
+							interested in the Vietnamese culture to join. VSA serves to create
+							culturally, socially, and educationally significant events that
+							stimulate understanding among the Vietnamese people and their
+							communities. In addition, VSA provides its members with an
+							opportunity to interact and exchange ideas vital to the growth and
+							prosperity of their communities. VSA is dedicated to serving the
+							public through community service and the teaching of the
+							Vietnamese language and culture.
+						</p>
+					</div>
+				</div>
+				<div
+					className="m-[50px] mx-[10rem] min-h-[600px] grid justify-center items-center text-center overflow-hidden"
+					id="events"
+				>
+					<div className="font-titles mb-16">
+						<h1 className="">Important Events</h1>
+					</div>
+					<div className="fallsem">
+						<div className="imagecol">
+							<Image src={stt} alt="" width={520} height={300} />
+						</div>
+						<div className="leftcol">
+							<h2>Fall Semester - Spill The Tea</h2>
+							<p>
+								The creativity of the RUVSA&apos;s board shines the brightest in
+								the fall semester&apos;s biggest event! You will find a host of
+								activities to participate, including a short film that will need
+								the choices of the audience to fun minigames in between each
+								portion of the film. Come on out and see what our historians
+								have cooked up!
+							</p>
+						</div>
+					</div>
+					<div className="springsem">
+						<div className="rightcol">
+							<h2>Spring Semester - Miss Asia</h2>
+							<p>
+								The biggest event of the spring semester, Miss Asia! Here, a
+								variety of nationalities are presented by their representatives
+								and compete to see who will be crowned Miss Asia. Many
+								performances will be prepared by the participants, allowing for
+								a night of excitement and tensiion. It&apos;s the event you
+								wouldn&apos;t want to miss!
+							</p>
+						</div>
+						<div className="imagecol">
+							<Image src={missasia} alt="" width={520} height={300} />
+						</div>
+					</div>
+				</div>
+				<div
+					className="min-h-[30rem] grid justify-center items-center text-center"
+					id="upcoming"
+				>
+					<div className="font-titles mb-20">
+						<h1>Upcoming Events</h1>
+					</div>
+					<div id="events_container">
+						<Upcoming />
+					</div>
+				</div>
+			</div>
+		</>
+	);
 }
