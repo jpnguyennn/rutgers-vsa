@@ -6,7 +6,7 @@ import React, { useState } from "react";
 import NavbarLinkItem from "./NavbarLinkItem";
 
 const NAV_LIST = [
-	{ text: "Home", href: "/home" },
+	{ text: "Home", href: "/" },
 	{ text: "Board", href: "/board" },
 	{ text: "VCDC", href: "/vcdc" },
 	{ text: "Gallery", href: "/gallery" },
