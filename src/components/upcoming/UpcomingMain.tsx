@@ -16,7 +16,7 @@ const UpcomingMain = ({
 	const picLink = require(`@/images/${pic}`);
 
 	return (
-		<>
+		<div>
 			<div
 				className="m-12 p-12 overflow-hidden justify-center items-center grid"
 				id="main_container"
@@ -42,7 +42,7 @@ const UpcomingMain = ({
 					</Link>
 				</div>
 			</div>
-		</>
+		</div>
 	);
 };
 

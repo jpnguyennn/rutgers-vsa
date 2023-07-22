@@ -5,6 +5,7 @@ module.exports = {
 		"./src/components/**/*.{js,ts,jsx,tsx,mdx}",
 		"./src/app/**/*.{js,ts,jsx,tsx,mdx}",
 	],
+	darkMode: "class",
 	theme: {
 		extend: {
 			backgroundImage: {
@@ -16,6 +17,7 @@ module.exports = {
 		fontFamily: {
 			titles: ["var(--font-playfair-display)", "serif"],
 			"lesser-titles": ["var(--font-lato)", "sans-serif"],
+			"board-name": ["var(--font-windsong)", "monospace"],
 		},
 	},
 	plugins: [],

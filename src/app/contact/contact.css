@@ -1,0 +1,19 @@
+#contact_container .column_left,
+#contact_container .column_right {
+	margin: 0 4rem;
+
+	border: 0.25rem rgb(156, 156, 156);
+	border-top: 0;
+	border-bottom: 0;
+	border-style: solid;
+}
+
+#emails p {
+	line-height: 2rem;
+
+	font-size: 1.25rem;
+}
+
+#emails a:hover {
+	text-decoration: solid;
+}

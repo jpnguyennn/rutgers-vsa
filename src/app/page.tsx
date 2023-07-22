@@ -49,46 +49,7 @@ export default function Home() {
 						</p>
 					</div>
 				</div>
-				<div
-					className="m-[50px] mx-[10rem] min-h-[600px] grid justify-center items-center text-center overflow-hidden"
-					id="events"
-				>
-					<div className="font-titles mb-16">
-						<h1 className="">Important Events</h1>
-					</div>
-					<div className="fallsem">
-						<div className="imagecol">
-							<Image src={stt} alt="" width={520} height={300} />
-						</div>
-						<div className="leftcol">
-							<h2>Fall Semester - Spill The Tea</h2>
-							<p>
-								The creativity of the RUVSA&apos;s board shines the brightest in
-								the fall semester&apos;s biggest event! You will find a host of
-								activities to participate, including a short film that will need
-								the choices of the audience to fun minigames in between each
-								portion of the film. Come on out and see what our historians
-								have cooked up!
-							</p>
-						</div>
-					</div>
-					<div className="springsem">
-						<div className="rightcol">
-							<h2>Spring Semester - Miss Asia</h2>
-							<p>
-								The biggest event of the spring semester, Miss Asia! Here, a
-								variety of nationalities are presented by their representatives
-								and compete to see who will be crowned Miss Asia. Many
-								performances will be prepared by the participants, allowing for
-								a night of excitement and tensiion. It&apos;s the event you
-								wouldn&apos;t want to miss!
-							</p>
-						</div>
-						<div className="imagecol">
-							<Image src={missasia} alt="" width={520} height={300} />
-						</div>
-					</div>
-				</div>
+
 				<div
 					className="min-h-[30rem] grid justify-center items-center text-center"
 					id="upcoming"

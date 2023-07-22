@@ -9,8 +9,6 @@ function AddMore(props) {
 		setPostNum((prevPostNum) => prevPostNum + 3); // 3 is the number of posts you want to load per click
 	}
 
-	console.log(props.events);
-
 	return (
 		<div>
 			{props.events.slice(0, postNum).map((item) => (
