@@ -1,12 +1,14 @@
 "use client";
 
+import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 import NavbarLinkItem from "./NavbarLinkItem";
 
 const NAV_LIST = [
-	{ text: "Home", href: "/home" },
+	{ text: "Home", href: "/" },
 	{ text: "Board", href: "/board" },
 	{ text: "VCDC", href: "/vcdc" },
 	{ text: "Gallery", href: "/gallery" },
@@ -31,6 +33,7 @@ const Navbar = () => {
 					<div></div>
 					<div></div>
 				</div>
+
 				<div className={`${navActive ? "active" : ""} nav__menu-list`}>
 					{NAV_LIST.map((menu, idx) => (
 						<div

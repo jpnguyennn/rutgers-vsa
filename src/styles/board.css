@@ -5,6 +5,7 @@
 
 #board_port {
 	padding: auto;
+	border-radius: 2.5%;
 
 	box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.2),
 		0 6px 20px 0 rgba(255, 255, 255, 0.19);
@@ -15,5 +16,10 @@
 	transform: scale(1.05);
 }
 #port_container #portrait {
-	border-radius: 40% 15%;
+	border-radius: 15%;
+}
+
+#port_container #portrait img {
+	width: 100%;
+	height: auto;
 }

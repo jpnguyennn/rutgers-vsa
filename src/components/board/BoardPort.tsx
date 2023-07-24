@@ -19,9 +19,9 @@ function BoardPort({
 	insta: string;
 }) {
 	return (
-		<>
+		<div>
 			<div
-				className="m-10 min-h-full sticky justify-center items-center"
+				className="m-10 p-4 min-h-full sticky justify-center items-center"
 				id="board_port"
 			>
 				<div className="m-7">
@@ -29,31 +29,20 @@ function BoardPort({
 						<h1>{position}</h1>
 					</div>
 					<div
-						className="flex justify-center items-center p-5"
+						className="flex justify-center items-center my-4"
 						id="port_container"
 					>
-						<img
-							src={img_url}
-							alt={fullname}
-							width={200}
-							height={200}
-							id="portrait"
-						/>
+						<img src={img_url} alt={fullname} id="portrait" />
 					</div>
 					<div
 						className="m-[10px] justify-center items-center text-center"
 						id="overlay"
 					>
-						<div className="font-lesser-titles text-2xl">{fullname}</div>
-						<div className="m-auto mt-8">
-							<Link href={insta} target="_blank">
-								Instagram
-							</Link>
-						</div>
+						<div className="font-board-name text-3xl">{fullname}</div>
 					</div>
 				</div>
 			</div>
-		</>
+		</div>
 	);
 }
 
