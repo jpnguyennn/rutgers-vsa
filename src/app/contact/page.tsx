@@ -1,6 +1,6 @@
+import "@/styles/contact.css";
 import Link from "next/link";
 import React, { useState } from "react";
-import "./contact.css";
 
 function ContactEmail({ email }) {
 	const build_link = "mailto: " + email;

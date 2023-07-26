@@ -4,7 +4,7 @@ import GalleryItem from "./GalleryItem";
 
 async function getGalleryData() {
 	const response = await fetch(
-		"https://ruvsa-api-git-preview-fyrezzz.vercel.app/api/archived-events",
+		"https://ruvsa-api.vercel.app/api/archived-events",
 		{
 			next: { revalidate: 1 },
 		}

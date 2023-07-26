@@ -1,0 +1,17 @@
+#gallery {
+	grid-row-gap: 25px;
+	grid-template-columns: repeat(auto-fit, minmax(375px, 1fr));
+}
+#gallery_item {
+	box-shadow: 0 4px 8px 0 rgb(17, 212, 46), 0 6px 20px 0 rgba(94, 7, 255, 0.19);
+	transition: 0.2s ease-in-out;
+}
+#gallery_item:hover {
+	transform: scale(1.05);
+}
+
+#event_picture_area img,
+#event_picture_area #event_date {
+	grid-column: 1;
+	grid-row: 1;
+}
