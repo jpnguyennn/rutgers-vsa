@@ -1,6 +1,12 @@
 import Footer from "@/components/layout/Footer";
 import Navbar from "@/components/layout/Navbar";
-import { Inter, Lato, Playfair_Display, WindSong } from "next/font/google";
+import {
+	Inter,
+	Lato,
+	Playfair_Display,
+	Slackside_One,
+	WindSong,
+} from "next/font/google";
 import "./globals.css";
 
 import { config } from "@fortawesome/fontawesome-svg-core";
@@ -25,6 +31,11 @@ const windsong = WindSong({
 	display: "swap",
 	variable: "--font-windsong",
 });
+const slackside = Slackside_One({
+	weight: ["400"],
+	subsets: ["latin"],
+	variable: "--font-slackside",
+});
 
 export const metadata = {
 	title: `RUVSA | HOME`,
@@ -39,7 +50,7 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<body
-				className={`${inter.variable} ${pfdisplay.variable} ${lato.variable} ${windsong.variable}`}
+				className={`${inter.variable} ${pfdisplay.variable} ${lato.variable} ${windsong.variable} ${slackside.variable}`}
 			>
 				<Navbar />
 				{children}

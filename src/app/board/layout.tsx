@@ -34,20 +34,17 @@ const FooterSSR = dynamic(() => import("@/components/layout/Footer"), {
 	ssr: false,
 });
 
-export default function RootLayout({
+
+export default function BoardLayout({
 	children,
 }: {
 	children: React.ReactNode;
 }) {
 	return (
-		<html lang="en">
-			<body
-				className={`${inter.variable} ${pfdisplay.variable} ${lato.variable} ${windsong.variable}`}
-			>
-				<NavbarSSR />
-				{children}
-				<FooterSSR />
-			</body>
-		</html>
+		<section
+			className={`${inter.variable} ${pfdisplay.variable} ${lato.variable} ${windsong.variable}`}
+		>
+			{children}
+		</section>
 	);
 }

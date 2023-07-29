@@ -1,3 +1,4 @@
+import logo from "@/images/vsaLogo.jpg";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
@@ -6,14 +7,12 @@ import NavbarLinkItem from "./NavbarLinkItem";
 const FOOTER_ITEMS = [];
 
 const Footer = () => {
-	const logo = require("@/images/vsaLogo.jpg");
-
 	return (
 		<footer>
 			<div className="p-[50px] text-white" id="footer">
 				<div>
 					<Link href="/">
-						<Image src={logo} alt="VSA LOGO" width={200} height={200}></Image>
+						<Image src={logo} alt="VSA LOGO" width={200} height={200} />
 					</Link>
 				</div>
 			</div>

@@ -1,41 +1,50 @@
 import "@/styles/gallery.css";
+import dynamic from "next/dynamic";
 import React from "react";
-import GalleryItem from "./GalleryItem";
 
-const GalleryItemGrid = (galleryitems: any) => {
-	return [galleryitems].map((item) => {
-		<GalleryItem
-			key={item.event_id}
-			event_name={item.event_name}
-			date={item.date}
-			insta={item.instagram_link}
-			cover_picture={`https://res.cloudinary.com/rutgers-vsa/${item.cover_picture}`}
-			drive={item.drive_link}
-		/>;
-	});
-};
+const GalleryItem = dynamic(() => import("./GalleryItem"), { ssr: false });
 
-const GalleryArea = (galleryitems: any) => {
-	console.log("galleryitems", galleryitems);
+async function getGalleryData() {
+	const response = await fetch(
+		"https://ruvsa-api.vercel.app/api/archived-events",
+		{
+			next: { revalidate: 1 },
+		}
+	);
 
-	return galleryitems.length == 0 ? (
+	if (!response.ok) {
+		throw new Error("Failed to fetch Gallery data. Please reload");
+	}
+
+	return await response.json();
+}
+
+export default async function GalleryArea() {
+	let gallery_data = JSON.parse(JSON.stringify(await getGalleryData()));
+
+	return gallery_data.length == 0 ? (
 		<div>
-			<div>
+			<div className="my-20 mx-auto text-center">
 				<h1>Gallery</h1>
-				<h1>It no work :(</h1>
 			</div>
 		</div>
 	) : (
 		<div>
-			<div>
+			<div className="my-20 mx-auto text-center">
 				<h1>Gallery</h1>
-				<h1>Second</h1>
 			</div>
-			<div id="gallery">
-				<GalleryItemGrid galleryitems={galleryitems} />
+			<div className="p-10 items-center grid" id="gallery">
+				{gallery_data.map((item) => (
+					<GalleryItem
+						key={item.event_id}
+						event_name={item.event_name}
+						date={item.date}
+						insta={item.instagram_link}
+						cover_picture={`https://res.cloudinary.com/rutgers-vsa/${item.cover_picture}`}
+						drive={item.drive_link}
+					/>
+				))}
 			</div>
 		</div>
 	);
-};
-
-export default GalleryArea;
+}
