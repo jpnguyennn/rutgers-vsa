@@ -27,12 +27,10 @@ export default function ContactLayout({
 	children: React.ReactNode;
 }) {
 	return (
-		<body
+		<section
 			className={`${inter.variable} ${pfdisplay.variable} ${lato.variable}`}
 		>
-			<Navbar />
 			{children}
-			<Footer />
-		</body>
+		</section>
 	);
 }

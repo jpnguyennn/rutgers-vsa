@@ -1,7 +1,7 @@
 import "@/app/globals.css";
 import Footer from "@/components/layout/Footer";
 import Navbar from "@/components/layout/Navbar";
-import { Inter, Lato, Playfair_Display } from "next/font/google";
+import { Inter, Lato, Playfair_Display, Slackside_One } from "next/font/google";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const pfdisplay = Playfair_Display({
@@ -15,6 +15,12 @@ const lato = Lato({
 	display: "swap",
 	variable: "--font-lato",
 });
+const slackside = Slackside_One({
+	weight: ["400"],
+	subsets: ["latin"],
+	display: "swap",
+	variable: "--font-slackside",
+});
 
 export const metadata = {
 	title: `RUVSA | GALLERY`,
@@ -27,12 +33,10 @@ export default function GalleryLayout({
 	children: React.ReactNode;
 }) {
 	return (
-		<body
-			className={`${inter.variable} ${pfdisplay.variable} ${lato.variable}`}
+		<section
+			className={`${inter.variable} ${pfdisplay.variable} ${lato.variable} ${slackside.variable}`}
 		>
-			<Navbar />
 			{children}
-			<Footer />
-		</body>
+		</section>
 	);
 }

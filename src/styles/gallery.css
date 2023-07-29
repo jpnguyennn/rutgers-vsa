@@ -10,8 +10,27 @@
 	transform: scale(1.05);
 }
 
-#event_picture_area img,
-#event_picture_area #event_date {
-	grid-column: 1;
-	grid-row: 1;
+#event_picture_area {
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.182), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#event_picture_area img {
+	max-width: 100%;
+	height: auto;
+}
+
+#event_date p {
+	font-family: var(--font-slackside), cursive;
+}
+
+#event_desc p {
+	font-family: var(--font-slackside), cursive;
+}
+
+@media (prefers-color-scheme: dark) {
+	#gallery_item {
+		box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.65),
+			0 6px 20px 0 rgba(255, 255, 255, 0.17);
+		transition: 0.2s ease-in-out;
+	}
 }

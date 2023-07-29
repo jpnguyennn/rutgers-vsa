@@ -1,6 +1,8 @@
 import "@/styles/gallery.css";
+import dynamic from "next/dynamic";
 import React from "react";
-import GalleryItem from "./GalleryItem";
+
+const GalleryItem = dynamic(() => import("./GalleryItem"), { ssr: false });
 
 async function getGalleryData() {
 	const response = await fetch(
@@ -17,29 +19,8 @@ async function getGalleryData() {
 	return await response.json();
 }
 
-function GalleryItemGrid(galleryitems: any) {
-	console.log("galleryitems", galleryitems.galleryitems);
-
-	return (
-		<div>
-			{galleryitems.galleryitems.map((item) => (
-				<GalleryItem
-					key={item.event_id}
-					event_name={item.event_name}
-					date={item.date}
-					insta={item.instagram_link}
-					cover_picture={`https://res.cloudinary.com/rutgers-vsa/${item.cover_picture}`}
-					drive={item.drive_link}
-				/>
-			))}
-		</div>
-	);
-}
-
 export default async function GalleryArea() {
 	let gallery_data = JSON.parse(JSON.stringify(await getGalleryData()));
-
-	console.log("gallery_data", gallery_data);
 
 	return gallery_data.length == 0 ? (
 		<div>
@@ -53,7 +34,16 @@ export default async function GalleryArea() {
 				<h1>Gallery</h1>
 			</div>
 			<div className="p-10 items-center grid" id="gallery">
-				<GalleryItemGrid galleryitems={gallery_data} />
+				{gallery_data.map((item) => (
+					<GalleryItem
+						key={item.event_id}
+						event_name={item.event_name}
+						date={item.date}
+						insta={item.instagram_link}
+						cover_picture={`https://res.cloudinary.com/rutgers-vsa/${item.cover_picture}`}
+						drive={item.drive_link}
+					/>
+				))}
 			</div>
 		</div>
 	);

@@ -18,6 +18,7 @@ module.exports = {
 			titles: ["var(--font-playfair-display)", "serif"],
 			"lesser-titles": ["var(--font-lato)", "sans-serif"],
 			"board-name": ["var(--font-windsong)", "monospace"],
+			"gallery-desc": ["var(--font-slackside)", "cursive"],
 		},
 	},
 	plugins: [],

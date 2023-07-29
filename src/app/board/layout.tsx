@@ -40,12 +40,10 @@ export default function BoardLayout({
 	children: React.ReactNode;
 }) {
 	return (
-		<body
+		<section
 			className={`${inter.variable} ${pfdisplay.variable} ${lato.variable} ${windsong.variable}`}
 		>
-			<NavbarSSR />
 			{children}
-			<FooterSSR />
-		</body>
+		</section>
 	);
 }

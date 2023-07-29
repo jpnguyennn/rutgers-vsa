@@ -1,6 +1,8 @@
+"use client";
+
 import "@/styles/gallery.css";
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 
 const GalleryItem = ({
 	key,
@@ -17,7 +19,7 @@ const GalleryItem = ({
 	cover_picture: string;
 	drive: string;
 }) => {
-	console.log("event_name", event_name);
+	const dateOfEvent = new Date(date);
 
 	return (
 		<div>
@@ -28,23 +30,27 @@ const GalleryItem = ({
 				<Link href={drive} target="_blank" id="gallery_item">
 					<div className="bg-white min-h-full p-8" id="gallery_portrait">
 						<div className="sticky">
-							<div className="block inline" id="event_picture_area">
+							<div className="relative" id="event_picture_area">
 								<img
 									src={cover_picture}
 									alt={event_name}
-									className="absolute z-10"
+									className="z-10"
 									id="event_picture"
+									height={55}
 								/>
 								<div
-									className="absolute text-black relative z-20 top-4 left-4 bg-slate-600"
+									className={`p-2 absolute text-black z-20 top-4 left-4 bg-[rgba(155,214,209,0.75)]`}
 									id="event_date"
 								>
-									<p>date</p>
+									<p>{dateOfEvent.toDateString()}</p>
 								</div>
 							</div>
 						</div>
-						<div className="text-black" id="event_desc">
-							<h2>{event_name}</h2>
+						<div
+							className="text-black text-center pt-4 text-4xl"
+							id="event_desc"
+						>
+							<p>{event_name}</p>
 						</div>
 					</div>
 				</Link>
