@@ -3,7 +3,8 @@
 	grid-template-columns: repeat(auto-fit, minmax(375px, 1fr));
 }
 #gallery_item {
-	box-shadow: 0 4px 8px 0 rgb(17, 212, 46), 0 6px 20px 0 rgba(94, 7, 255, 0.19);
+	box-shadow: 0 4px 8px 0 rgba(223, 156, 149, 0.5),
+		0 6px 20px 0 rgba(180, 224, 220, 0.19);
 	transition: 0.2s ease-in-out;
 }
 #gallery_item:hover {
@@ -11,7 +12,7 @@
 }
 
 #event_picture_area {
-	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.182), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.182), 0 1px 5px 0 rgba(0, 0, 0, 0.19);
 }
 
 #event_picture_area img {
@@ -25,12 +26,4 @@
 
 #event_desc p {
 	font-family: var(--font-slackside), cursive;
-}
-
-@media (prefers-color-scheme: dark) {
-	#gallery_item {
-		box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.65),
-			0 6px 20px 0 rgba(255, 255, 255, 0.17);
-		transition: 0.2s ease-in-out;
-	}
 }
