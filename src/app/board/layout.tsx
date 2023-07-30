@@ -34,6 +34,7 @@ const FooterSSR = dynamic(() => import("@/components/layout/Footer"), {
 	ssr: false,
 });
 
+
 export default function BoardLayout({
 	children,
 }: {
