@@ -22,7 +22,7 @@ const Navbar = () => {
 	return (
 		<header>
 			<nav
-				className="flex p-4 pt-1 pb-1 justify-between items-center bg-[rgba(0,0,0,0.9)] text-white"
+				className="flex p-4 pt-1 pb-1 justify-between items-center bg-[rgba(27,18,4,0.9)] text-white"
 				id="nav"
 			>
 				<Link href={"/"}>

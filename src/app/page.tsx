@@ -51,7 +51,7 @@ export default function Home() {
 				</div>
 
 				<div
-					className="min-h-[30rem] grid justify-center items-center text-center"
+					className="mb-8 min-h-[30rem] grid justify-center items-center text-center"
 					id="upcoming"
 				>
 					<div className="font-titles mb-20">

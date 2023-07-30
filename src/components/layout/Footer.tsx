@@ -9,7 +9,7 @@ const FOOTER_ITEMS = [];
 const Footer = () => {
 	return (
 		<footer>
-			<div className="p-[50px] text-white" id="footer">
+			<div className="bg-[rgb(27,18,4)] p-[50px] text-white" id="footer">
 				<div>
 					<Link href="/">
 						<Image src={logo} alt="VSA LOGO" width={200} height={200} />
@@ -17,7 +17,7 @@ const Footer = () => {
 				</div>
 			</div>
 			<div
-				className="bg-black text-gray-400 justify-center p-10px"
+				className="bg-[rgb(27,18,4)] text-gray-400 justify-center p-10px"
 				id="copyright"
 			>
 				<p>
