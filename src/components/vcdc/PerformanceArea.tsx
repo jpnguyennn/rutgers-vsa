@@ -3,7 +3,10 @@ import PerformanceVideo from "./PerformanceVideo";
 
 async function getPerformanceData() {
 	const response = await fetch(
-		`https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=50&playlistId=PLpk-GWLWHFtb1IyhR77yaVwoAJWN6HSDh&key=${process.env.YOUTUBE_API_KEY}`
+		`https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=50&playlistId=${process.env.YOUTUBE_UPLOADS_ID}&key=${process.env.YOUTUBE_API_KEY}`,
+		{
+			next: { revalidate: 604800 },
+		}
 	);
 	return response.json();
 }
