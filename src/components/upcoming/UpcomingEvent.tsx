@@ -12,7 +12,7 @@ function PostExists({ link }: { link: string }) {
 		return (
 			<Link href={link} target="_blank">
 				<h3
-					className="opacity-50 text-white no-underline hover:text-blue hover:underline hover:opacity-100"
+					className="opacity-50 text-black no-underline hover:text-blue hover:underline hover:opacity-100"
 					id="post_link"
 				>
 					CLICK HERE TO SEE IG POST
@@ -37,7 +37,7 @@ const UpcomingEvent = ({
 	return (
 		<>
 			<div
-				className="m-12 p-7 flex min-w-[75rem] relative justify-center items-center border-white border-double border-l-0 border-r-0 min-h-[10rem]"
+				className="m-12 p-7 flex min-w-[75rem] relative justify-center items-center border-b-2 border-[rgb(226,163,91,0.5)] border-double border-l-0 border-r-0 min-h-[10rem]"
 				id="add_container"
 			>
 				<div className="" id="img_container">

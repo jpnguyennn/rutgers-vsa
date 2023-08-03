@@ -24,7 +24,7 @@ export default async function Contact() {
 				<h1>Contact Us</h1>
 			</div>
 			<div className="justify-center items-center flex">
-				<div className="mx-5 inline-flex" id="contact_container">
+				<div className="m-8 inline-flex" id="contact_container">
 					<div className="mx-16 border-l-0 border-r-0 column_left">
 						<div className="p-20" id="emails">
 							<h1 className="mb-8">
@@ -41,8 +41,8 @@ export default async function Contact() {
 					</div>
 
 					<div>
-						<div>
-							<h1>FOLLOW US ON OUR SOCIALS</h1>
+						<div className="p-16">
+							<h1 className="text-5xl">Follow Us On Our Socials</h1>
 							<div>
 								<div></div>
 							</div>

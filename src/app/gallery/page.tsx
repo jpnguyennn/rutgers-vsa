@@ -1,7 +1,7 @@
 import GalleryArea from "@/components/gallery/GalleryArea";
 import React from "react";
 
-export default async function gallery() {
+export default function gallery() {
 	return (
 		<main>
 			<GalleryArea />
