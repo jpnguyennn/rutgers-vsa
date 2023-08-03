@@ -5,10 +5,10 @@ import BoardPort from "./BoardPort";
 const BoardMain = ({ board_members }: { board_members: any }) => {
 	return (
 		<>
-			<div className=" my-20 mx-auto text-center">
+			<div className="my-20 mx-auto text-center">
 				<h1>RUVSA BOARD</h1>
 			</div>
-			<div className="p-10 items-center grid " id="board">
+			<div className="p-10 items-center grid phone:p-5" id="board">
 				{board_members.map((item) => (
 					<BoardPort
 						key={item.member_id}

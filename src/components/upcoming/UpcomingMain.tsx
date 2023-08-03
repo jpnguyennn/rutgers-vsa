@@ -34,7 +34,7 @@ const UpcomingMain = ({
 					<h1 className="font-titles">{event}</h1>
 					<Link href={post} target="_blank">
 						<h3
-							className="mt-4 opacity-50 text-white no-underline hover:text-blue hover:underline hover:opacity-100"
+							className="mt-4 opacity-50 text-black no-underline hover:text-blue hover:underline hover:opacity-100"
 							id="post_link"
 						>
 							CLICK HERE TO SEE IG POST

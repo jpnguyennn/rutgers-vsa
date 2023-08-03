@@ -9,15 +9,20 @@ module.exports = {
 	theme: {
 		extend: {
 			backgroundImage: {
-				"gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-				"gradient-conic":
-					"conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+				"home-hero":
+					"linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/hero.png')",
+				"vcdc-hero":
+					"linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/vcdc-hero.jpg')",
 			},
 		},
 		fontFamily: {
 			titles: ["var(--font-playfair-display)", "serif"],
 			"lesser-titles": ["var(--font-lato)", "sans-serif"],
 			"board-name": ["var(--font-windsong)", "monospace"],
+		},
+		screens: {
+			phone: { max: "640px" },
+			tablet: { max: "1007px" },
 		},
 	},
 	plugins: [],
