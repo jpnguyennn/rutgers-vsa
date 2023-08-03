@@ -18,6 +18,7 @@ export default async function PerformanceArea() {
 				const { medium } = thumbnails;
 				return (
 					<PerformanceVideo
+						key={id}
 						title={title}
 						thumbnails={thumbnails}
 						resourceId={resourceId}
