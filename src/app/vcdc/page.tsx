@@ -6,7 +6,7 @@ const VCDC = () => {
 	return (
 		<main>
 			<div
-				className="bg-vcdc-hero bg-center bg-no-repeat bg-cover h-screen min-h-screen flex justify-center items-center"
+				className="bg-vcdc-hero bg-center bg-no-repeat bg-cover h-screen min-h-screen flex justify-center items-center phone:min-h-[50vh]"
 				id="hero"
 			>
 				<div className="text-white bg-[rgba(249,241,241,0.25)] py-24 px-12 max-w-4xl border-2 border-white border-solid flex-col text-center phone:text">

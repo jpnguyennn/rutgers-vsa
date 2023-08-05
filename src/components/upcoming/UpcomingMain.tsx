@@ -23,12 +23,7 @@ const UpcomingMain = ({
 			>
 				<p className="text-[2rem] italic mb-4">{date}</p>
 				<div className="" id="img_container">
-					<Image
-						src={picLink}
-						alt={event}
-						width={450}
-						className="rounded-[20px]"
-					></Image>
+					<Image src={picLink} alt={event} className="rounded-[20px]" />
 				</div>
 				<div className="m-4" id="text_container">
 					<h1 className="font-titles">{event}</h1>
