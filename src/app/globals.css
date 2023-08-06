@@ -115,3 +115,36 @@ header {
 		width: 100%;
 	}
 }
+
+#navbar_item {
+	background: linear-gradient(currentColor 0 0) bottom left/
+		var(--underline-width, 0%) 0.1em no-repeat;
+	text-decoration: none;
+	transition: background-size 0.5s;
+}
+#navbar_item:hover {
+	--underline-width: 100%;
+}
+
+#footer_item {
+	background: linear-gradient(currentColor 0 0) bottom left/
+		var(--underline-width, 0%) 0.1em no-repeat;
+	color: #f80;
+	padding: 0 0.5em 0.2em;
+	text-decoration: none;
+	transition: background-size 0.5s;
+}
+#footer_item:hover {
+	--underline-width: 100%;
+}
+
+#footer_email {
+	background: linear-gradient(currentColor 0 0) bottom left/
+		var(--underline-width, 0%) 0.1em no-repeat;
+	text-decoration: none;
+	padding-bottom: 0.25em;
+	transition: background-size 0.5s;
+}
+#footer_email:hover {
+	--underline-width: 100%;
+}

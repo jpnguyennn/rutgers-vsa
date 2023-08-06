@@ -5,7 +5,7 @@ async function getPerformanceData() {
 	const response = await fetch(
 		`https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=50&playlistId=${process.env.YOUTUBE_UPLOADS_ID}&key=${process.env.YOUTUBE_API_KEY}`,
 		{
-			next: { revalidate: 604800 },
+			next: { revalidate: 1800 },
 		}
 	);
 	return response.json();

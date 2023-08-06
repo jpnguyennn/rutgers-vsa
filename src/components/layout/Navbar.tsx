@@ -42,6 +42,7 @@ const Navbar = () => {
 								setNavActive(false);
 							}}
 							key={menu.text}
+							id="navbar_item"
 						>
 							<NavbarLinkItem active={activeIdx === idx} {...menu} />
 						</div>
