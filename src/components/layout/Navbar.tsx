@@ -1,5 +1,6 @@
 "use client";
 
+import logo from "@/images/extLogo.png";
 import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
@@ -22,11 +23,11 @@ const Navbar = () => {
 	return (
 		<header>
 			<nav
-				className="flex p-4 pt-1 pb-1 justify-between items-center bg-[rgba(27,18,4,0.9)] text-white"
+				className="flex p-4 pt-1 pb-1 justify-between items-center bg-[rgba(27,18,4,0.975)] text-white"
 				id="nav"
 			>
-				<Link href={"/"}>
-					<h1 className="font-titles text-2xl">RUTGERS VSA</h1>
+				<Link className="py-2" href={"/"}>
+					<Image src={logo} alt="VSA LOGO" width={100} height={100} />
 				</Link>
 				<div onClick={() => setNavActive(!navActive)} className="nav__menu-bar">
 					<div></div>

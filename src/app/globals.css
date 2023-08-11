@@ -40,7 +40,7 @@ header {
 
 /* ------ NAV BAR ------- */
 #nav h3 {
-	font-family: "Lato", sans-serif;
+	font-family: var(--font-inter), sans-serif;
 }
 .nav__menu-bar {
 	display: flex;
@@ -124,6 +124,10 @@ header {
 }
 #navbar_item:hover {
 	--underline-width: 100%;
+}
+
+#navbar_text {
+	font-family: var(--font-inter), sans-serif;
 }
 
 #footer_item {

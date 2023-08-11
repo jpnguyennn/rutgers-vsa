@@ -13,7 +13,11 @@ import { config } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 config.autoAddCss = false;
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
+const inter = Inter({
+	subsets: ["latin"],
+	weight: ["500"],
+	variable: "--font-inter",
+});
 const pfdisplay = Playfair_Display({
 	subsets: ["latin", "vietnamese"],
 	display: "swap",

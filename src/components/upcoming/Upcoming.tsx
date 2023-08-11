@@ -30,6 +30,8 @@ class Event {
 	}
 }
 
+async function getUpcomingDate() {}
+
 var firstEvent = Object.assign(new Event(), UpcomingEventsDB.at(0));
 var otherEvents = UpcomingEventsDB.splice(1, UpcomingEventsDB.length - 1);
 

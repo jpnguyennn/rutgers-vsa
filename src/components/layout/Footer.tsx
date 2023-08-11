@@ -1,6 +1,6 @@
 "use client";
 
-import logo from "@/images/vsaLogo.jpg";
+import logo from "@/images/extLogo.png";
 import {
 	faFacebook,
 	faInstagram,
@@ -53,7 +53,7 @@ const Footer = () => {
 					<div className="ml-12">
 						<div className="flex" id="mini_socials">
 							<div
-								className="bg-[rgb(255,247,240)] text-black text-[1.5rem] p-2 mr-3 rounded-full"
+								className="bg-[rgb(255,247,240)] w-[2.15em] text-center text-black text-[1.5rem] p-2 mr-3 rounded-full"
 								id="social_bubble"
 							>
 								<a
@@ -64,7 +64,7 @@ const Footer = () => {
 								</a>
 							</div>
 							<div
-								className="bg-[rgb(255,247,240)] text-black text-[1.5rem] p-2 mr-3 rounded-full"
+								className="bg-[rgb(255,247,240)] w-[2.15em] text-center text-black text-[1.5rem] p-2 mr-3 rounded-full"
 								id="social_bubble"
 							>
 								<a href="https://www.facebook.com/VSArutgers/" target="_blank">
@@ -72,7 +72,7 @@ const Footer = () => {
 								</a>
 							</div>
 							<div
-								className="bg-[rgb(255,247,240)] text-black text-[1.5rem] p-2 mr-3 rounded-full"
+								className="bg-[rgb(255,247,240)] w-[2.15em] text-center text-black text-[1.5rem] p-2 mr-3 rounded-full"
 								id="social_bubble"
 							>
 								<a
