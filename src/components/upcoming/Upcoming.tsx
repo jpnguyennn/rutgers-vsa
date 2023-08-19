@@ -3,7 +3,6 @@
 import "@/styles/upcoming.css";
 import { useEffect, useState } from "react";
 import UpcomingAdd from "./UpcomingAdd";
-import UpcomingEventsDB from "./UpcomingEventsDB";
 import UpcomingMain from "./UpcomingMain";
 
 class Event {
@@ -30,12 +29,15 @@ class Event {
 	}
 }
 
-var firstEvent = Object.assign(new Event(), UpcomingEventsDB.at(0));
-var otherEvents = UpcomingEventsDB.splice(1, UpcomingEventsDB.length - 1);
+const Upcoming = ({ upcomingData }: { upcomingData: any }) => {
+	var firstEvent = null;
+	var otherEvents = null;
 
-export const Upcoming = () => {
 	const [mounted, setMounted] = useState<boolean | null>(false);
-
+	if (upcomingData.length != 0) {
+		firstEvent = Object.assign(new Event(), upcomingData.at(0));
+		otherEvents = upcomingData.splice(1, upcomingData.length - 1);
+	}
 	useEffect(() => {
 		setMounted(true);
 	}, []);
@@ -45,10 +47,10 @@ export const Upcoming = () => {
 			<h1>NEXT UP</h1>
 			<div className="overflow_manage">
 				<UpcomingMain
-					event={firstEvent.title}
-					post={firstEvent.insta}
+					event={firstEvent.event_name}
+					post={firstEvent.instagram_link}
 					date={firstEvent.date}
-					pic={firstEvent.pic}
+					pic={firstEvent.event_picture}
 				/>
 			</div>
 			<h1>Future Events</h1>
@@ -58,3 +60,5 @@ export const Upcoming = () => {
 		</div>
 	);
 };
+
+export default Upcoming;

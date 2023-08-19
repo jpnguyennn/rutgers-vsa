@@ -4,6 +4,7 @@
 	background-size: cover;
 }
 
+/*
 #events .fallsem,
 #events .springsem {
 	display: flex;
@@ -57,4 +58,11 @@
 	#events .springsem {
 		display: inherit;
 	}
+}
+*/
+
+#events_container #img_container_main img {
+	width: 50%;
+	align-items: center;
+	margin: auto;
 }

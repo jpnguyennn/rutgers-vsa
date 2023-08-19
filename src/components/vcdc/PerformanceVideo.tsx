@@ -4,6 +4,7 @@ const PerformanceVideo = ({ title, thumbnails, resourceId, medium }) => {
 			<a
 				href={`https://www.youtube.com/watch?v=${resourceId.videoId}`}
 				target="_blank"
+				className=""
 			>
 				<div id="left-column">
 					<img
@@ -14,7 +15,7 @@ const PerformanceVideo = ({ title, thumbnails, resourceId, medium }) => {
 						className="m-auto"
 					/>
 				</div>
-				<div id="right-column">
+				<div className="mt-4" id="right-column">
 					<h2>{title}</h2>
 				</div>
 			</a>

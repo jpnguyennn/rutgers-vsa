@@ -11,7 +11,7 @@ const NavbarLinkItem = ({
 }) => {
 	return (
 		<Link href={href}>
-			<h3>{text}</h3>{" "}
+			<h3 id="navbar_text">{text}</h3>{" "}
 		</Link>
 	);
 };

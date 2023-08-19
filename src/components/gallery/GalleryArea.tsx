@@ -21,6 +21,7 @@ async function getGalleryData() {
 
 export default async function GalleryArea() {
 	let gallery_data = JSON.parse(JSON.stringify(await getGalleryData()));
+	gallery_data.reverse();
 
 	return gallery_data.length == 0 ? (
 		<div>
