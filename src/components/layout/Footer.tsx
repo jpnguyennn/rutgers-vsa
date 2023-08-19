@@ -27,7 +27,10 @@ const Footer = () => {
 
 	return (
 		<footer>
-			<div className="bg-[rgb(27,18,4)] p-[50px] text-white flex" id="footer">
+			<div
+				className="bg-[rgb(27,18,4)] p-[50px] text-white flex phone:block"
+				id="footer"
+			>
 				<div className="min-w-[70%]">
 					<Link href="/">
 						<Image src={logo} alt="VSA LOGO" width={200} height={200} />

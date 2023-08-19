@@ -32,8 +32,6 @@ const UpcomingEvent = ({
 	post: string;
 	date: string;
 }) => {
-	const picLink = require(`@/images/${pic}`);
-
 	return (
 		<>
 			<div
@@ -42,7 +40,7 @@ const UpcomingEvent = ({
 			>
 				<div className="" id="img_container">
 					<Image
-						src={picLink}
+						src={`https://res.cloudinary.com/rutgers-vsa/${pic}`}
 						alt={event}
 						width={200}
 						height={200}

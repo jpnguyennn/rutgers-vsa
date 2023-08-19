@@ -1,4 +1,4 @@
-import { Upcoming } from "@/components/upcoming/Upcoming";
+import UpcomingArea from "@/components/upcoming/UpcomingArea";
 import Head from "next/head";
 import Image from "next/image";
 import React from "react";
@@ -58,7 +58,7 @@ export default function Home() {
 						<h1>Upcoming Events</h1>
 					</div>
 					<div id="events_container">
-						<Upcoming />
+						<UpcomingArea />
 					</div>
 				</div>
 			</div>

@@ -21,13 +21,13 @@ const Navbar = () => {
 	const [activeIdx, setActiveIdx] = useState<number | null>(-1);
 
 	return (
-		<header>
+		<header className="">
 			<nav
 				className="flex p-4 pt-1 pb-1 justify-between items-center bg-[rgba(27,18,4,0.975)] text-white"
 				id="nav"
 			>
 				<Link className="py-2" href={"/"}>
-					<Image src={logo} alt="VSA LOGO" width={100} height={100} />
+					<Image src={logo} alt="VSA LOGO" width={90} height={90} />
 				</Link>
 				<div onClick={() => setNavActive(!navActive)} className="nav__menu-bar">
 					<div></div>

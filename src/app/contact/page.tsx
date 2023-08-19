@@ -30,7 +30,10 @@ export default async function Contact() {
 			</div>
 			<div className="justify-center items-center flex">
 				<div className="m-8 inline-flex" id="contact_container">
-					<div className="mx-16 column_left">
+					<div
+						className="mx-16 my-0 border-r-[0.25rem] border-[rgb(156, 156, 156)] border-solid"
+						id="column_left"
+					>
 						<div className="p-20" id="emails">
 							<h1 className="mb-8">
 								Contact us individually:

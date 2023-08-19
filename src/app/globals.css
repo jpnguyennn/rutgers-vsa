@@ -59,7 +59,7 @@ header {
 	display: flex;
 	flex-direction: column;
 	position: fixed;
-	top: 40px;
+	top: 114px;
 	width: 288px;
 	row-gap: 24px;
 	right: -288px;

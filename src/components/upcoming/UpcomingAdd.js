@@ -14,10 +14,10 @@ function AddMore(props) {
 			{props.events.slice(0, postNum).map((item) => (
 				<div key={item.id}>
 					<UpcomingEvent
-						event={item.title}
-						post={item.insta}
+						event={item.event_name}
+						post={item.instagram_link}
 						date={item.date}
-						pic={item.pic}
+						pic={item.event_picture}
 					/>
 				</div>
 			))}

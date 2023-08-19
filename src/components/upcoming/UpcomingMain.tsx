@@ -13,8 +13,6 @@ const UpcomingMain = ({
 	post: string;
 	date: string;
 }) => {
-	const picLink = require(`@/images/${pic}`);
-
 	return (
 		<div>
 			<div
@@ -22,8 +20,12 @@ const UpcomingMain = ({
 				id="main_container"
 			>
 				<p className="text-[2rem] italic mb-4">{date}</p>
-				<div className="" id="img_container">
-					<Image src={picLink} alt={event} className="rounded-[20px]" />
+				<div className="" id="img_container_main">
+					<img
+						src={`https://res.cloudinary.com/rutgers-vsa/${pic}`}
+						alt={event}
+						className="rounded-[20px]"
+					/>
 				</div>
 				<div className="m-4" id="text_container">
 					<h1 className="font-titles">{event}</h1>
