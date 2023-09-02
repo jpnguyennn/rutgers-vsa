@@ -14,6 +14,8 @@ async function getPerformanceData() {
 export default async function PerformanceArea() {
 	const performanceData = await getPerformanceData();
 
+	console.log("performanceData", performanceData);
+
 	return (
 		<div className="m-[auto] items-center justify-center">
 			{performanceData.items.map(({ id, snippet }) => {

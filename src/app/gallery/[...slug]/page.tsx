@@ -5,7 +5,9 @@ const GalleryYear = ({ params }: { params: { slug: string } }) => {
 
 	return (
 		<div>
-			<h1>HIIII: {params.slug}</h1>
+			<h1 className="my-20 mx-auto justify-center text-center">
+				Year {params.slug} Gallery
+			</h1>
 		</div>
 	);
 };
