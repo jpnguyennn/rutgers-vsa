@@ -12,7 +12,12 @@ export default function FourOFour({
 }) {
 	return (
 		<>
-			<h1>HEY WHAT ARE YOU DOING HERE!</h1>
+			<div className="min-h-screen">
+				<div className="m-auto content-center justify-center text-center p-auto">
+					<h1 className="mb-3">404: Page Not Found</h1>
+					<p className="text-3xl">Ủa...sao bạn dược kiếm liên này...</p>
+				</div>
+			</div>
 		</>
 	);
 }
