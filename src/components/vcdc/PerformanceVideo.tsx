@@ -1,6 +1,6 @@
 const PerformanceVideo = ({ title, thumbnails, resourceId, medium }) => {
 	return (
-		<div className="mx-auto my-12 content-center text-center items-center justify-center max-w-[50%]">
+		<div className="my-4">
 			<a
 				href={`https://www.youtube.com/watch?v=${resourceId.videoId}`}
 				target="_blank"

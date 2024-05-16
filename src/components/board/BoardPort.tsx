@@ -25,8 +25,10 @@ function BoardPort({
 				id="board_port"
 			>
 				<div className="m-7">
-					<div className="align-center items-center text-center justify-center font-bold min-h-[5rem]">
-						<h1>{position}</h1>
+					<div className="align-center items-center text-center justify-center font-titles max-h-[2em]">
+						<p className="text-2xl ">
+							<strong>{position}</strong>
+						</p>
 					</div>
 					<div
 						className="flex justify-center items-center my-4"
@@ -38,7 +40,9 @@ function BoardPort({
 						className="m-[10px] justify-center items-center text-center"
 						id="overlay"
 					>
-						<div className="font-board-name text-3xl">{fullname}</div>
+						<div className="font-board-name text-2xl max-h-[1em]">
+							{fullname}
+						</div>
 					</div>
 				</div>
 			</div>

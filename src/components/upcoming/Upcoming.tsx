@@ -2,7 +2,6 @@
 
 import "@/styles/upcoming.css";
 import { useEffect, useState } from "react";
-import UpcomingAdd from "./UpcomingAdd";
 import UpcomingMain from "./UpcomingMain";
 
 class Event {
@@ -44,7 +43,6 @@ const Upcoming = ({ upcomingData }: { upcomingData: any }) => {
 
 	return (
 		<div>
-			<h1>NEXT UP</h1>
 			<div className="overflow_manage">
 				<UpcomingMain
 					event={firstEvent.event_name}
@@ -52,10 +50,6 @@ const Upcoming = ({ upcomingData }: { upcomingData: any }) => {
 					date={firstEvent.date}
 					pic={firstEvent.event_picture}
 				/>
-			</div>
-			<h1>Future Events</h1>
-			<div className="overflow_manage">
-				<UpcomingAdd events={otherEvents} />
 			</div>
 		</div>
 	);

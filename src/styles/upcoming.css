@@ -6,9 +6,6 @@
 
 /* ----------- UPCOMINGMAIN ---------- */
 
-#main_container {
-	border: 3px solid rgba(226, 163, 91, 0.25);
-}
 #post_link {
 	transition: color 0.25s, text-decoration 1s, opacity 0.25s;
 }

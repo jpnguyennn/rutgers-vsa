@@ -16,7 +16,7 @@ const VCDC = () => {
 				</div>
 			</div>
 			<div
-				className="m-auto min-h-[600px] grid max-w-4xl content-center text-center"
+				className="m-auto min-h-[400px] grid max-w-4xl content-center text-center phone:min-h-[600px]"
 				id="about"
 			>
 				<div className="m-13 mb-10 text-5xl font-titles">
@@ -24,19 +24,11 @@ const VCDC = () => {
 				</div>
 				<div className="py-0 px-20 text-[1.05em]">
 					<p className="leading-10">
-						Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magni
-						totam vel deleniti temporibus porro facilis, a debitis facere iure
-						pariatur quae quos optio dolore nostrum eos neque id quibusdam
-						rerum? Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-						Magni totam vel deleniti temporibus porro facilis, a debitis facere
-						iure pariatur quae quos optio dolore nostrum eos neque id quibusdam
-						rerum? Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-						Magni totam vel deleniti temporibus porro facilis, a debitis facere
-						iure pariatur quae quos optio dolore nostrum eos neque id quibusdam
-						rerum? Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-						Magni totam vel deleniti temporibus porro facilis, a debitis facere
-						iure pariatur quae quos optio dolore nostrum eos neque id quibusdam
-						rerum?
+						The Vietnamese Cultural Dance Crew is a group dedicated to sharing
+						and promoting Vietnamese culture through traditional lion and fan
+						dancing. By showcasing their art form, VCDC strives to increase
+						awareness and appreciation for the rich heritage of Vietnam within
+						their community.
 					</p>
 				</div>
 			</div>
