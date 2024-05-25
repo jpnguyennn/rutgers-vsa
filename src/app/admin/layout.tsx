@@ -16,11 +16,7 @@ export const metadata: Metadata = {
 	},
 };
 
-export default function Layout({
-	children,
-}: Readonly<{
-	children: React.ReactNode;
-}>) {
+export default function Layout({ children }: { children: React.ReactNode }) {
 	return (
 		<div className="p-8 w-full overflow-y-auto flex h-full">{children}</div>
 	);

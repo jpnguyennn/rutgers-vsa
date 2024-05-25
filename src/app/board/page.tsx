@@ -60,15 +60,15 @@ const Board = async () => {
 					<h1>EXECUTIVE BOARD</h1>
 				</div>
 				<ExecutiveBoard members={res.props.board_members} />
-				<Interns members={res.props.interns} />
+				{/*<Interns members={res.props.interns} />*/}
 			</div>
 		</main>
 	);
 };
 
 async function getData() {
-	const allBoardMembers = await prisma.boardMember.findMany();
-	const allInterns = await prisma.intern.findMany();
+	// const allBoardMembers = await prisma.boardMember.findMany();
+	// const allInterns = await prisma.intern.findMany();
 	return {
 		props: {
 			board_members: [
@@ -101,7 +101,7 @@ async function getData() {
 					slug: "johnpaul-nguyen",
 				},
 			],
-			interns: allInterns,
+			// interns: allInterns,
 		},
 	};
 }

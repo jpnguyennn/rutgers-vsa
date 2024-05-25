@@ -1,7 +1,7 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import React, { Children } from "react";
+import React from "react";
 
 import { cn } from "@/lib/utils";
 
