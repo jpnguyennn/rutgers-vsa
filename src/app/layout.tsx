@@ -11,7 +11,8 @@ import { config } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 config.autoAddCss = false;
 
-import CompleteLayout from "@/components/layout/CompleteLayout";
+import CompleteFooter from "@/components/layout/CompleteFooter";
+import CompleteHeader from "@/components/layout/CompleteHeader";
 
 const inter = Inter({
 	subsets: ["latin"],
@@ -56,7 +57,9 @@ export default function RootLayout({
 			<body
 				className={`${inter.variable} ${pfdisplay.variable} ${lato.variable} ${windsong.variable} ${slackside.variable}`}
 			>
-				<CompleteLayout children={children} />
+				<CompleteHeader />
+				{children}
+				<CompleteFooter />
 			</body>
 		</html>
 	);
