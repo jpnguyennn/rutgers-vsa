@@ -1,6 +1,9 @@
 "use client";
 
+import { AddBoardMemberForm } from "@/components/admin/board-member-form";
+import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import {
+	Table,
 	TableBody,
 	TableCell,
 	TableHead,
@@ -9,16 +12,26 @@ import {
 } from "@/components/ui/table";
 import {
 	ColumnDef,
+	ColumnFiltersState,
 	SortingState,
 	flexRender,
 	getCoreRowModel,
+	getFilteredRowModel,
 	getPaginationRowModel,
 	getSortedRowModel,
 	useReactTable,
 } from "@tanstack/react-table";
-import { Table } from "lucide-react";
+import { CirclePlus } from "lucide-react";
 import * as React from "react";
-import { Button } from "./button";
+import { Button } from "../../../components/ui/button";
+import { Input } from "../../../components/ui/input";
+import {
+	Sheet,
+	SheetContent,
+	SheetHeader,
+	SheetTitle,
+	SheetTrigger,
+} from "../../../components/ui/sheet";
 
 interface DataTableProps<TData, TValue> {
 	columns: ColumnDef<TData, TValue>[];
@@ -31,6 +44,9 @@ export function DataTable<TData, TValue>({
 }: DataTableProps<TData, TValue>) {
 	const [sorting, setSorting] = React.useState<SortingState>([]);
 	const [rowSelection, setRowSelection] = React.useState({});
+	const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
+		[]
+	);
 
 	const table = useReactTable({
 		data,
@@ -39,15 +55,52 @@ export function DataTable<TData, TValue>({
 		getPaginationRowModel: getPaginationRowModel(),
 		onSortingChange: setSorting,
 		onRowSelectionChange: setRowSelection,
+		onColumnFiltersChange: setColumnFilters,
+		getFilteredRowModel: getFilteredRowModel(),
 		getSortedRowModel: getSortedRowModel(),
 		state: {
 			sorting,
 			rowSelection,
+			columnFilters,
 		},
 	});
 
 	return (
 		<div>
+			<div className="flex items-center py-4 justify-between">
+				<Input
+					placeholder="Search by name..."
+					value={
+						(table.getColumn("full_name")?.getFilterValue() as string) ?? ""
+					}
+					onChange={(event) =>
+						table.getColumn("full_name")?.setFilterValue(event.target.value)
+					}
+					className="max-w-sm"
+				/>
+
+				<Sheet>
+					<SheetTrigger>
+						<Button variant="outline">
+							<CirclePlus className="pr-2" />
+							Create New Entry
+						</Button>
+					</SheetTrigger>
+
+					<SheetContent className="w-1/2">
+						<ScrollArea className="h-full">
+							<div className="px-10">
+								<SheetHeader>
+									<SheetTitle>Create New Database Entry</SheetTitle>
+								</SheetHeader>
+								<AddBoardMemberForm />
+							</div>
+							<ScrollBar orientation="vertical" />
+						</ScrollArea>
+					</SheetContent>
+				</Sheet>
+			</div>
+
 			<div className="rounded-md border">
 				<Table>
 					<TableHeader>
@@ -91,7 +144,7 @@ export function DataTable<TData, TValue>({
 									colSpan={columns.length}
 									className="h-24 text-center"
 								>
-									No Results.
+									No results.
 								</TableCell>
 							</TableRow>
 						)}
