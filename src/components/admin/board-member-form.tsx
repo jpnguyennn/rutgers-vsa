@@ -221,7 +221,7 @@ export function AddBoardMemberForm() {
 								<Textarea placeholder="I chose VSA because..." {...field} />
 							</FormControl>
 							<FormDescription>
-								Copy the "Why VSA?" prompt from eboard reveal.
+								Copy the &quot;Why VSA?&quot; prompt from eboard reveal.
 							</FormDescription>
 							<FormMessage />
 						</FormItem>
@@ -237,9 +237,9 @@ export function AddBoardMemberForm() {
 								<Input placeholder="john-doe" {...field} />
 							</FormControl>
 							<FormDescription>
-								Please put the board member's name in lowercase and separated
-								with hyphens. This will be used as an extension when the
-								portrait is clicked on the board page.
+								Please put the board member&apos;s name in lowercase and
+								separated with hyphens. This will be used as an extension when
+								the portrait is clicked on the board page.
 							</FormDescription>
 							<FormMessage />
 						</FormItem>
