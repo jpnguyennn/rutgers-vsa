@@ -13,6 +13,8 @@ import prisma from "@/lib/prisma";
 import { ColumnDef } from "@tanstack/react-table";
 import { ArrowUpDown, MoreHorizontal } from "lucide-react";
 
+import { deleteBoardMember } from "@/components/prisma-functions";
+
 // Create new type BoardMember with the following fields and matching with the Prisma schema
 export type BoardMember = {
 	id: number;
@@ -68,6 +70,7 @@ export const columns: ColumnDef<BoardMember>[] = [
 		id: "actions",
 		cell: ({ row }) => {
 			const member = row.original;
+			console.log(member.id);
 
 			return (
 				<DropdownMenu>
@@ -79,15 +82,7 @@ export const columns: ColumnDef<BoardMember>[] = [
 					</DropdownMenuTrigger>
 					<DropdownMenuContent align="end">
 						<DropdownMenuLabel>Actions</DropdownMenuLabel>
-						<DropdownMenuItem
-							onClick={async () =>
-								await prisma.boardMember.delete({
-									where: {
-										id: member.id,
-									},
-								})
-							}
-						>
+						<DropdownMenuItem onClick={() => deleteBoardMember(member.id)}>
 							Delete Member
 						</DropdownMenuItem>
 					</DropdownMenuContent>

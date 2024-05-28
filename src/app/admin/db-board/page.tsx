@@ -1,16 +1,10 @@
-import prisma from "@/lib/prisma";
-import { BoardMember, columns } from "./columns";
+import { columns } from "./columns";
 import { DataTable } from "./data-table";
 
-async function getData(): Promise<BoardMember[]> {
-	const boardMembers = await prisma.boardMember.findMany();
-	console.log("members: ", boardMembers);
-
-	return boardMembers;
-}
+import { getBoardMemberData } from "@/components/prisma-functions";
 
 export default async function BoardDatabase() {
-	const data = await getData();
+	const data = await getBoardMemberData();
 
 	return (
 		<div>

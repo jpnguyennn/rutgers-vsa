@@ -4,7 +4,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 
 import { useForm } from "react-hook-form";
 import { z } from "zod";
-import { Button } from "../ui/button";
+import { Button } from "../../../components/ui/button";
 import {
 	Form,
 	FormControl,
@@ -13,11 +13,11 @@ import {
 	FormItem,
 	FormLabel,
 	FormMessage,
-} from "../ui/form";
-import { Input } from "../ui/input";
-import { Textarea } from "../ui/textarea";
+} from "../../../components/ui/form";
+import { Input } from "../../../components/ui/input";
+import { Textarea } from "../../../components/ui/textarea";
 
-import prisma from "@/lib/prisma";
+import { createBoardMember } from "../../../components/prisma-functions";
 
 const formSchema = z.object({
 	positional_id: z.number().or(z.string()).pipe(z.coerce.number()),
@@ -52,21 +52,21 @@ export function AddBoardMemberForm() {
 	});
 
 	async function onSubmit(values: z.infer<typeof formSchema>) {
-		const createdBoardMember = await prisma.boardMember.create({
-			data: {
-				positional_id: values.positional_id,
-				full_name: values.full_name,
-				position: values.position,
-				photo_url: values.photo_url,
-				facebook: values.facebook,
-				instagram: values.instagram,
-				vsa_email: values.vsa_email,
-				year: values.year,
-				major: values.major,
-				why_vsa: values.why_vsa,
-				slug: values.slug,
-			},
+		const createdBoardMember = await createBoardMember({
+			positional_id: values.positional_id,
+			full_name: values.full_name,
+			position: values.position,
+			photo_url: values.photo_url,
+			facebook: values.facebook,
+			instagram: values.instagram,
+			vsa_email: values.vsa_email,
+			year: values.year,
+			major: values.major,
+			why_vsa: values.why_vsa,
+			slug: values.slug,
 		});
+
+		console.log(createdBoardMember);
 	}
 
 	return (
