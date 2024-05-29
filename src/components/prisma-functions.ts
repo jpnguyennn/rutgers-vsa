@@ -10,16 +10,12 @@ import { BoardMember, Intern, Prisma } from "@prisma/client";
 
 export async function getBoardMemberData(): Promise<BoardMember[]> {
 	const boardMembers = await prisma.boardMember.findMany();
-	console.log("members: ", boardMembers);
-	console.log("prisma in getData: ", prisma);
 
 	return boardMembers;
 }
 
 export async function getInternData(): Promise<Intern[]> {
 	const interns = await prisma.intern.findMany();
-	console.log("members (interns): ", interns);
-	console.log("prisma in getData: ", prisma);
 
 	return interns;
 }
@@ -31,9 +27,6 @@ export async function getInternData(): Promise<Intern[]> {
 export async function createBoardMember(
 	data: Prisma.BoardMemberCreateInput
 ): Promise<Partial<BoardMember>> {
-	console.log("prisma: ", prisma);
-	console.log("data in createBoardMember: ", data);
-
 	return await prisma.boardMember.create({ data });
 }
 

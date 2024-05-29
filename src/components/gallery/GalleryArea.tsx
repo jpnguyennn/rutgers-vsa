@@ -34,7 +34,7 @@ export default async function GalleryArea() {
 			<div className="my-20 mx-auto text-center">
 				<h1>Gallery</h1>
 			</div>
-			<div className="p-10 items-center grid" id="gallery">
+			{/* <div className="p-10 items-center grid" id="gallery">
 				{gallery_data.map((item) => (
 					<GalleryItem
 						key={item.event_id}
@@ -45,7 +45,7 @@ export default async function GalleryArea() {
 						drive={item.drive_link}
 					/>
 				))}
-			</div>
+			</div> */}
 		</div>
 	);
 }

@@ -44,12 +44,12 @@ export default async function Contact() {
 								<a href="mailto:rutgersvsa@gmail.com">rutgersvsa@gmail.com</a>
 							</p>
 
-							{ContactData.map((item) => (
+							{/* {ContactData.map((item) => (
 								<p key={item.member_id}>
 									<strong>{item.name}: </strong>
 									<ContactEmail email={item.vsa_email} />
 								</p>
-							))}
+							))} */}
 						</div>
 					</div>
 
