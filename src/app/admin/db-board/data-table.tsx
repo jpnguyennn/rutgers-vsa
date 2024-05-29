@@ -1,6 +1,6 @@
 "use client";
 
-import { AddBoardMemberForm } from "@/app/admin/db-board/board-member-form";
+import { AddBoardMemberForm } from "@/app/admin/db-board/add-board-member-form";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import {
 	Table,

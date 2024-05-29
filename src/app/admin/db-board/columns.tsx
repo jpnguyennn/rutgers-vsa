@@ -7,13 +7,22 @@ import {
 	DropdownMenuContent,
 	DropdownMenuItem,
 	DropdownMenuLabel,
+	DropdownMenuSeparator,
 	DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import prisma from "@/lib/prisma";
+import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
+import {
+	Sheet,
+	SheetContent,
+	SheetHeader,
+	SheetTitle,
+	SheetTrigger,
+} from "@/components/ui/sheet";
 import { ColumnDef } from "@tanstack/react-table";
 import { ArrowUpDown, MoreHorizontal } from "lucide-react";
 
 import { deleteBoardMember } from "@/components/prisma-functions";
+import { EditBoardMemberForm } from "./edit-board-member-form";
 
 // Create new type BoardMember with the following fields and matching with the Prisma schema
 export type BoardMember = {
@@ -82,6 +91,24 @@ export const columns: ColumnDef<BoardMember>[] = [
 					</DropdownMenuTrigger>
 					<DropdownMenuContent align="end">
 						<DropdownMenuLabel>Actions</DropdownMenuLabel>
+						<DropdownMenuSeparator />
+						<Sheet>
+							<SheetTrigger>
+								<DropdownMenuItem>Edit Member</DropdownMenuItem>
+							</SheetTrigger>
+
+							<SheetContent className="w-1/2">
+								<ScrollArea className="h-full">
+									<div className="px-10">
+										<SheetHeader>
+											<SheetTitle>Create New Database Entry</SheetTitle>
+										</SheetHeader>
+										<EditBoardMemberForm />
+									</div>
+									<ScrollBar orientation="vertical" />
+								</ScrollArea>
+							</SheetContent>
+						</Sheet>
 						<DropdownMenuItem onClick={() => deleteBoardMember(member.id)}>
 							Delete Member
 						</DropdownMenuItem>
