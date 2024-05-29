@@ -20,32 +20,40 @@ async function getGalleryData() {
 }
 
 export default async function GalleryArea() {
-	let gallery_data = JSON.parse(JSON.stringify(await getGalleryData()));
-	gallery_data.reverse();
+	// let gallery_data = JSON.parse(JSON.stringify(await getGalleryData()));
+	// gallery_data.reverse();
 
-	return gallery_data.length == 0 ? (
+	// return gallery_data.length == 0 ? (
+	// 	<div>
+	// 		<div className="my-20 mx-auto text-center">
+	// 			<h1>Gallery</h1>
+	// 		</div>
+	// 	</div>
+	// ) : (
+	// 	<div>
+	// 		<div className="my-20 mx-auto text-center">
+	// 			<h1>Gallery</h1>
+	// 		</div>
+	// 		<div className="p-10 items-center grid" id="gallery">
+	// 			{gallery_data.map((item) => (
+	// 				<GalleryItem
+	// 					key={item.event_id}
+	// 					event_name={item.event_name}
+	// 					date={item.date}
+	// 					insta={item.instagram_link}
+	// 					cover_picture={`https://res.cloudinary.com/rutgers-vsa/${item.cover_picture}`}
+	// 					drive={item.drive_link}
+	// 				/>
+	// 			))}
+	// 		</div>
+	// 	</div>
+	// );
+
+	return (
 		<div>
 			<div className="my-20 mx-auto text-center">
 				<h1>Gallery</h1>
 			</div>
-		</div>
-	) : (
-		<div>
-			<div className="my-20 mx-auto text-center">
-				<h1>Gallery</h1>
-			</div>
-			{/* <div className="p-10 items-center grid" id="gallery">
-				{gallery_data.map((item) => (
-					<GalleryItem
-						key={item.event_id}
-						event_name={item.event_name}
-						date={item.date}
-						insta={item.instagram_link}
-						cover_picture={`https://res.cloudinary.com/rutgers-vsa/${item.cover_picture}`}
-						drive={item.drive_link}
-					/>
-				))}
-			</div> */}
 		</div>
 	);
 }

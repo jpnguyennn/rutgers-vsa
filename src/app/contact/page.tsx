@@ -17,11 +17,11 @@ async function getContactData() {
 }
 
 export default async function Contact() {
-	const ContactData = await getContactData();
+	// const ContactData = await getContactData();
 
-	ContactData.sort(function (a, b) {
-		return a.member_id - b.member_id;
-	});
+	// ContactData.sort(function (a, b) {
+	// 	return a.member_id - b.member_id;
+	// });
 
 	return (
 		<>
