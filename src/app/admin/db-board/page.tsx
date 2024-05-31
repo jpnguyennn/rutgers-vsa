@@ -1,7 +1,17 @@
 import { columns } from "./columns";
 import { DataTable } from "./data-table";
 
-import { getBoardMemberData } from "@/components/prisma-functions";
+import { BoardMember } from "@prisma/client";
+
+export async function getBoardMemberData(): Promise<BoardMember[]> {
+	const boardMembers = await fetch("http://localhost:3000/api/board", {
+		next: { revalidate: 10 },
+	});
+
+	console.log(boardMembers);
+
+	return [];
+}
 
 export default async function BoardDatabase() {
 	const data = await getBoardMemberData();

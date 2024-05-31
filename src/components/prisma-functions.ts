@@ -9,9 +9,11 @@ import { BoardMember, Intern, Prisma } from "@prisma/client";
  */
 
 export async function getBoardMemberData(): Promise<BoardMember[]> {
-	const boardMembers = await prisma.boardMember.findMany();
+	const boardMembers = await fetch("http://ruvsa.vercel.app/api/board", {
+		next: { revalidate: 10 },
+	});
 
-	return boardMembers;
+	return boardMembers.json();
 }
 
 export async function getInternData(): Promise<Intern[]> {
