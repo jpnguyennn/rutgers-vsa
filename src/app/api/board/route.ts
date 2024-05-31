@@ -3,8 +3,6 @@ import { PrismaNeon } from "@prisma/adapter-neon";
 import { PrismaClient } from "@prisma/client";
 import { NextResponse } from "next/server";
 
-export const runtime = "edge";
-
 export async function GET(request: Request) {
 	try {
 		const neon = new Pool({
