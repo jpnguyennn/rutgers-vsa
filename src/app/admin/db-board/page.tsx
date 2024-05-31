@@ -3,7 +3,7 @@ import { DataTable } from "./data-table";
 
 import { BoardMember } from "@prisma/client";
 
-export async function getBoardMemberData(): Promise<BoardMember[]> {
+async function getBoardMemberData(): Promise<BoardMember[]> {
 	const boardMembers = await fetch("http://ruvsa.vercel.com/api/board", {
 		next: { revalidate: 1 },
 	});
