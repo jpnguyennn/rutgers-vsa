@@ -17,11 +17,11 @@ async function getContactData() {
 }
 
 export default async function Contact() {
-	const ContactData = await getContactData();
+	// const ContactData = await getContactData();
 
-	ContactData.sort(function (a, b) {
-		return a.member_id - b.member_id;
-	});
+	// ContactData.sort(function (a, b) {
+	// 	return a.member_id - b.member_id;
+	// });
 
 	return (
 		<>
@@ -44,12 +44,12 @@ export default async function Contact() {
 								<a href="mailto:rutgersvsa@gmail.com">rutgersvsa@gmail.com</a>
 							</p>
 
-							{ContactData.map((item) => (
+							{/* {ContactData.map((item) => (
 								<p key={item.member_id}>
 									<strong>{item.name}: </strong>
 									<ContactEmail email={item.vsa_email} />
 								</p>
-							))}
+							))} */}
 						</div>
 					</div>
 

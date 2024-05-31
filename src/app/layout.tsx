@@ -56,7 +56,7 @@ export default function RootLayout({
 			<body
 				className={`${inter.variable} ${pfdisplay.variable} ${lato.variable} ${windsong.variable} ${slackside.variable}`}
 			>
-				<CompleteLayout children={children} />
+				<CompleteLayout>{children}</CompleteLayout>
 			</body>
 		</html>
 	);

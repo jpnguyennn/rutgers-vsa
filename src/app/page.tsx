@@ -57,9 +57,9 @@ export default function Home() {
 					<div className="font-titles mb-20">
 						<h1>Upcoming Event</h1>
 					</div>
-					<div id="events_container">
+					{/* <div id="events_container">
 						<UpcomingArea />
-					</div>
+					</div> */}
 				</div>
 			</div>
 		</>

@@ -1,0 +1,35 @@
+generator client {
+  provider = "prisma-client-js"
+  previewFeatures = ["driverAdapters"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url       = env("POSTGRES_PRISMA_URL") // uses connection pooling
+  directUrl = env("POSTGRES_URL_NON_POOLING") // uses a direct connection
+}
+
+model BoardMember {
+  id            Int     @id @default(autoincrement())
+  positional_id Int
+  full_name     String?
+  position      String?
+  photo_url     String?
+  facebook      String?
+  instagram     String?
+  vsa_email     String?
+  year          Int
+  major         String?
+  why_vsa       String?
+  slug          String?
+}
+
+model Intern {
+  id        Int     @id @default(autoincrement())
+  full_name String?
+  photo_url String?
+  facebook  String?
+  instagram String?
+  year      Int
+  major     String?
+}

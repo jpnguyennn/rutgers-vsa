@@ -1,0 +1,74 @@
+import MdxLayout from "@/components/markdown/docs-layout";
+import Contents from "@/components/admin/Contents";
+
+<Contents />
+
+<div>
+# Welcome to the Rutgers VSA Admin Panel
+
+---
+
+## Sections
+
+- Overview
+- Adjustable Content
+  - Home Page
+  - Board Page
+  - VCDC Page
+  - Gallery Page
+  - Contact Page
+- Adjustable Layout
+  - Header
+  - Footer
+- Databases
+  - Board Members/Interns
+  - Gallery
+- FAQ
+
+---
+
+## Overview
+
+This documentation will provide you with the tools necessary in order to update the Rutgers VSA Website to the best quality and latest news. This will explain the steps necessary to update certain aspects of the website in high detail. If there is there is a certain aspect of the website that you wish to alter, please contact me using the `Contact Webmaster` link at the footer of the main site.
+
+I made this admin panel for board members to easily change content around without having to delve deep into the monstrosity that I call my code. (Trust me, it is not pretty)
+
+I hope you enjoy this journey and do not hesitate to contact me if things go awry.
+
+~ JohnPaul Nguyen (Cultural Chair 2023-2025)
+
+---
+
+## Adjustable Content
+
+### Home Page
+
+### Board Page
+
+### VCDC Page
+
+### Gallery Page
+
+### Contact Page
+
+---
+
+## Adjustable Layout
+
+### Header
+
+### Footer
+
+---
+
+## Databases
+
+### Board Members/Interns
+
+### Gallery
+
+</div>
+
+export default function MDXPage({ children }) {
+	return <MdxLayout>{children}</MdxLayout>;
+}
