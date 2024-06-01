@@ -4,7 +4,7 @@ import { DataTable } from "./data-table";
 import { BoardMember } from "@prisma/client";
 
 async function getBoardMemberData(): Promise<BoardMember[]> {
-	const boardMembers = await fetch("http://localhost:3000/api/board", {
+	const boardMembers = await fetch("http://ruvsa.vercel.app/api/board", {
 		next: { revalidate: 1 },
 	});
 
