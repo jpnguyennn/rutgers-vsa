@@ -1,4 +1,5 @@
 import SocialsArea from "@/components/contact/SocialsArea";
+import { getBoardMemberData } from "@/components/prisma-functions";
 import "@/styles/contact.css";
 import Link from "next/link";
 import React, { useState } from "react";
@@ -9,19 +10,12 @@ function ContactEmail({ email }) {
 	return <a href={build_link}>{email}</a>;
 }
 
-async function getContactData() {
-	let response = await fetch("http://ruvsa-api.vercel.app/api/board", {
-		next: { revalidate: 3600 },
-	});
-	return response.json();
-}
-
 export default async function Contact() {
-	// const ContactData = await getContactData();
+	const boardMemberData = await getBoardMemberData();
 
-	// ContactData.sort(function (a, b) {
-	// 	return a.member_id - b.member_id;
-	// });
+	boardMemberData.sort(function (a, b) {
+		return a.positional_id - b.positional_id;
+	});
 
 	return (
 		<>
@@ -44,12 +38,12 @@ export default async function Contact() {
 								<a href="mailto:rutgersvsa@gmail.com">rutgersvsa@gmail.com</a>
 							</p>
 
-							{/* {ContactData.map((item) => (
-								<p key={item.member_id}>
-									<strong>{item.name}: </strong>
+							{boardMemberData.map((item) => (
+								<p key={item.positional_id}>
+									<strong>{item.full_name}: </strong>
 									<ContactEmail email={item.vsa_email} />
 								</p>
-							))} */}
+							))}
 						</div>
 					</div>
 
