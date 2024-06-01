@@ -17,9 +17,11 @@ export async function getBoardMemberData(): Promise<BoardMember[]> {
 }
 
 export async function getInternData(): Promise<Intern[]> {
-	const interns = await prisma.intern.findMany();
+	const interns = await fetch("http://ruvsa.vercel.app/api/board", {
+		next: { revalidate: 10 },
+	});
 
-	return interns;
+	return interns.json();
 }
 
 /*
@@ -32,6 +34,12 @@ export async function createBoardMember(
 	return await prisma.boardMember.create({ data });
 }
 
+export async function createIntern(
+	data: Prisma.InternCreateInput
+): Promise<Partial<Intern>> {
+	return await prisma.intern.create({ data });
+}
+
 /*
  * Functions that allow the deletion of entries to the respective databases.
  */
@@ -40,6 +48,10 @@ export async function deleteBoardMember(member_id) {
 	const deletedBoardMember = await prisma.boardMember.delete({
 		where: { id: member_id },
 	});
+}
 
-	console.log(deleteBoardMember);
+export async function deleteIntern(member_id) {
+	const deletedIntern = await prisma.intern.delete({
+		where: { id: member_id },
+	});
 }
