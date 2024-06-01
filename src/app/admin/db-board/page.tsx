@@ -8,8 +8,6 @@ async function getBoardMemberData(): Promise<BoardMember[]> {
 		next: { revalidate: 1 },
 	});
 
-	console.log(boardMembers);
-
 	return boardMembers.json();
 }
 
