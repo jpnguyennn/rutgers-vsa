@@ -3,6 +3,10 @@ import React from "react";
 import BoardPort from "@/components/board/BoardPort";
 import { getBoardMemberData } from "@/components/prisma-functions";
 
+import prisma from "@/lib/prisma";
+import { PrismaClient } from "@prisma/client";
+
+
 function ExecutiveBoard({ members }: { members: any }) {
 	members.sort(function (a, b) {
 		return a.positional_id - b.positional_id;
