@@ -1,11 +1,11 @@
 import React from "react";
 
 import BoardPort from "@/components/board/BoardPort";
+import { getBoardMemberData } from "@/components/prisma-functions";
 import prisma from "@/lib/prisma";
 import { PrismaClient } from "@prisma/client";
 
 function ExecutiveBoard({ members }: { members: any }) {
-	console.log("board members: ", members);
 	members.sort(function (a, b) {
 		return a.positional_id - b.positional_id;
 	});
@@ -51,7 +51,7 @@ function Interns({ members }: { members: any }) {
 }
 
 const Board = async () => {
-	const res = await getData();
+	const res = await getBoardMemberData();
 
 	return (
 		<main>
@@ -59,51 +59,11 @@ const Board = async () => {
 				<div className="my-20 mx-auto text-center">
 					<h1>EXECUTIVE BOARD</h1>
 				</div>
-				<ExecutiveBoard members={res.props.board_members} />
+				<ExecutiveBoard members={res} />
 				{/*<Interns members={res.props.interns} />*/}
 			</div>
 		</main>
 	);
 };
-
-async function getData() {
-	// const allBoardMembers = await prisma.boardMember.findMany();
-	// const allInterns = await prisma.intern.findMany();
-	return {
-		props: {
-			board_members: [
-				{
-					id: 1,
-					positional_id: 1,
-					full_name: "JohnPaul Nguyen",
-					position: "Cultural Chair",
-					photo_url: "image/upload/v1694568525/ldqk7e9g71vpcfrgoj1e.jpg",
-					facebook: "https://www.facebook.com/profile.php?id=100087135307066",
-					instagram: "https://www.instagram.com/jp.nguyennn",
-					vsa_email: "ruvsa.cultural@gmail.com",
-					year: 2026,
-					major: "Computer Science and Mathematics",
-					why_vsa: "heeheehaahaa",
-					slug: "johnpaul-nguyen",
-				},
-				{
-					id: 2,
-					positional_id: 2,
-					full_name: "Kevin Do",
-					position: "Fundraising Chair",
-					photo_url: "image/upload/v1694568767/yh4btwumgmxla3c0sgcc.jpg",
-					facebook: "https://www.facebook.com/profile.php?id=100087135307066",
-					instagram: "https://www.instagram.com/jp.nguyennn",
-					vsa_email: "ruvsa.fundraising@gmail.com",
-					year: 2025,
-					major: "Computer Science and Mathematics",
-					why_vsa: "heeheehaahaa",
-					slug: "johnpaul-nguyen",
-				},
-			],
-			// interns: allInterns,
-		},
-	};
-}
 
 export default Board;
