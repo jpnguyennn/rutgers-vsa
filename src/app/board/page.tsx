@@ -2,8 +2,10 @@ import React from "react";
 
 import BoardPort from "@/components/board/BoardPort";
 import { getBoardMemberData } from "@/components/prisma-functions";
+
 import prisma from "@/lib/prisma";
 import { PrismaClient } from "@prisma/client";
+
 
 function ExecutiveBoard({ members }: { members: any }) {
 	members.sort(function (a, b) {
@@ -51,15 +53,16 @@ function Interns({ members }: { members: any }) {
 }
 
 const Board = async () => {
-	const res = await getBoardMemberData();
+	const board_res = await getBoardMemberData();
 
 	return (
 		<main>
 			<div>
 				<div className="my-20 mx-auto text-center">
+					<h2>2024-2025</h2>
 					<h1>EXECUTIVE BOARD</h1>
 				</div>
-				<ExecutiveBoard members={res} />
+				<ExecutiveBoard members={board_res} />
 				{/*<Interns members={res.props.interns} />*/}
 			</div>
 		</main>
