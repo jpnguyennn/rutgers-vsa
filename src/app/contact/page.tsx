@@ -10,18 +10,18 @@ function ContactEmail({ email }) {
 }
 
 async function getContactData() {
-	let response = await fetch("http://ruvsa-api.vercel.app/api/board", {
+	let response = await fetch("http://ruvsa.vercel.app/api/board", {
 		next: { revalidate: 3600 },
 	});
 	return response.json();
 }
 
 export default async function Contact() {
-	// const ContactData = await getContactData();
+	const ContactData = await getContactData();
 
-	// ContactData.sort(function (a, b) {
-	// 	return a.member_id - b.member_id;
-	// });
+	ContactData.sort(function (a, b) {
+		return a.member_id - b.member_id;
+	});
 
 	return (
 		<>
@@ -43,13 +43,12 @@ export default async function Contact() {
 								<strong>For general information:</strong>{" "}
 								<a href="mailto:rutgersvsa@gmail.com">rutgersvsa@gmail.com</a>
 							</p>
-
-							{/* {ContactData.map((item) => (
+							{ContactData.map((item) => (
 								<p key={item.member_id}>
-									<strong>{item.name}: </strong>
+									<strong>{item.full_name}: </strong>
 									<ContactEmail email={item.vsa_email} />
 								</p>
-							))} */}
+							))}
 						</div>
 					</div>
 
