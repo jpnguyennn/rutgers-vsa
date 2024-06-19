@@ -6,13 +6,11 @@ import React from "react";
 import { AspectRatio } from "../ui/aspect-ratio";
 
 const GalleryPhotocard = ({
-	key,
 	event_name,
 	date,
 	cover_picture,
 	rotation,
 }: {
-	key: number;
 	event_name: string;
 	date: Date;
 	cover_picture: string;

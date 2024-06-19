@@ -45,11 +45,10 @@ export default function GalleryTable(full_data) {
 						const randomAngle = Math.random() * 11 - 5;
 
 						return (
-							<div className="flex-col">
+							<div key={item.id} className="flex-col">
 								<Separator />
 								<div className="flex" id="gallery_item_whole">
 									<GalleryPhotocard
-										key={item.id}
 										event_name={item.event_name}
 										date={item.event_date}
 										cover_picture={item.thumbnail}
