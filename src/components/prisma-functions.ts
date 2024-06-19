@@ -17,20 +17,20 @@ export async function getBoardMemberData(): Promise<BoardMember[]> {
 }
 
 export async function getInternData(): Promise<Intern[]> {
-	const interns = await fetch("http://ruvsa.vercel.app/api/board", {
+	const interns = await fetch("http://ruvsa.vercel.app/api/interns", {
 		next: { revalidate: 10 },
 	});
 
 	return interns.json();
 }
 
-// export async function getEventData(): Promise<GalleryItem[]> {
-// 	// const interns = await fetch("http://ruvsa.vercel.app/api/board", {
-// 	// 	next: { revalidate: 10 },
-// 	// });
+export async function getEventData(): Promise<GalleryItem[]> {
+	const events = await fetch("http://ruvsa.vercel.app/api/gallery", {
+		next: { revalidate: 10 },
+	});
 
-// 	// return interns.json();
-// }
+	return events.json();
+}
 
 /*
  * Functions that allow the creation of entries to the respective databases.

@@ -117,7 +117,7 @@ export function AddEventForm() {
 									/>
 								</PopoverContent>
 							</Popover>
-							<FormDescription>Full name of the board member.</FormDescription>
+							<FormDescription>Select the date of the event.</FormDescription>
 							<FormMessage />
 						</FormItem>
 					)}
@@ -131,7 +131,7 @@ export function AddEventForm() {
 							<FormControl>
 								<Input placeholder="Busch MPR" {...field} />
 							</FormControl>
-							<FormDescription>Position held by board member.</FormDescription>
+							<FormDescription>Input location of the event.</FormDescription>
 							<FormMessage />
 						</FormItem>
 					)}
@@ -157,12 +157,12 @@ export function AddEventForm() {
 					name="thumbnail"
 					render={({ field }) => (
 						<FormItem>
-							<FormLabel>Facebook Handle</FormLabel>
+							<FormLabel>Thumbnail</FormLabel>
 							<FormControl>
 								<Input placeholder="image/..." {...field} />
 							</FormControl>
 							<FormDescription>
-								Paste the link to the Cloudinary image here.
+								Paste the link to the cloudinary url of the image.
 							</FormDescription>
 							<FormMessage />
 						</FormItem>

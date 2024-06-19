@@ -1,15 +1,31 @@
-import GalleryArea from "@/components/gallery/GalleryArea";
 import React from "react";
 
-export default function gallery() {
+import GalleryTable from "./gallery-table";
+
+import { GalleryItem } from "@prisma/client";
+
+async function getGalleryData(): Promise<GalleryItem[]> {
+	const items = await fetch(process.env.RUVSA_API_GALLERY, {
+		next: { revalidate: 1 },
+	});
+
+	return items.json();
+}
+
+export default async function gallery() {
+	const new_full_data = await getGalleryData();
+
+	new_full_data.sort(
+		(a, b) =>
+			new Date(b.event_date).getTime() - new Date(a.event_date).getTime()
+	);
+
 	return (
 		<main>
-			<div>
-				<div className="my-20 mx-auto text-center">
-					<h1>Gallery</h1>
-				</div>
+			<div className="my-20 mx-auto text-center">
+				<h1>Gallery</h1>
 			</div>
-			<GalleryArea />
+			<GalleryTable full_data={new_full_data} />
 		</main>
 	);
 }
