@@ -15,6 +15,11 @@ async function getGalleryData(): Promise<GalleryItem[]> {
 export default async function gallery() {
 	const new_full_data = await getGalleryData();
 
+	new_full_data.sort(
+		(a, b) =>
+			new Date(b.event_date).getTime() - new Date(a.event_date).getTime()
+	);
+
 	return (
 		<main>
 			<div className="my-20 mx-auto text-center">

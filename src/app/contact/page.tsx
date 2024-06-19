@@ -1,8 +1,7 @@
 import SocialsArea from "@/components/contact/SocialsArea";
 import { getBoardMemberData } from "@/components/prisma-functions";
 import "@/styles/contact.css";
-import Link from "next/link";
-import React, { useState } from "react";
+import React from "react";
 
 function ContactEmail({ email }) {
 	const build_link = "mailto: " + email;

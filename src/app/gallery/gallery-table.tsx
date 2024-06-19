@@ -3,7 +3,6 @@
 import GalleryPhotocard from "@/components/gallery/GalleryPhotocard";
 import { Input } from "@/components/ui/input";
 import { Separator } from "@/components/ui/separator";
-import { GalleryItem } from "@prisma/client";
 import { useEffect, useState } from "react";
 
 export default function GalleryTable(full_data) {
