@@ -2,7 +2,13 @@
 
 import prisma from "@/lib/prisma";
 
-import { BoardMember, GalleryItem, Intern, Prisma } from "@prisma/client";
+import {
+	BoardMember,
+	GalleryItem,
+	Intern,
+	Prisma,
+	UpcomingEvent,
+} from "@prisma/client";
 
 /*
  * Functions that allow the retrieval of database entries of all of the defined models.
@@ -30,6 +36,14 @@ export async function getEventData(): Promise<GalleryItem[]> {
 	});
 
 	return events.json();
+}
+
+export async function getUpcomingData(): Promise<UpcomingEvent> {
+	const event = await fetch("http://ruvsa.vercel.app/api/upcoming", {
+		next: { revalidate: 10 },
+	});
+
+	return event.json();
 }
 
 /*

@@ -27,12 +27,11 @@ const GalleryPhotocard = ({
 			<div className="bg-white min-h-full p-8" id="gallery_portrait">
 				<div className="sticky">
 					<div className="relative" id="event_picture_area">
-						<AspectRatio ratio={3 / 2}>
+						<AspectRatio ratio={1}>
 							<Image
 								src={`https://res.cloudinary.com/rutgers-vsa/${cover_picture}`}
 								alt={event_name}
 								className="z-10"
-								id="event_picture"
 								fill={true}
 							/>
 						</AspectRatio>

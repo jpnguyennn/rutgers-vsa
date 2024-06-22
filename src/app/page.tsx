@@ -50,16 +50,13 @@ export default function Home() {
 					</div>
 				</div>
 
-				<div
-					className="mb-8 min-h-[30rem] grid justify-center items-center text-center"
-					id="upcoming"
-				>
+				<div className="mb-8 min-h-[30rem] grid text-center" id="upcoming">
 					<div className="font-titles mb-20">
 						<h1>Upcoming Event</h1>
 					</div>
-					{/* <div id="events_container">
+					<div id="events_container" className="max-h-10">
 						<UpcomingArea />
-					</div> */}
+					</div>
 				</div>
 			</div>
 		</>
