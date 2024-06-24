@@ -51,10 +51,10 @@ export default function Home() {
 				</div>
 
 				<div className="mb-8 min-h-[30rem] grid text-center" id="upcoming">
-					<div className="font-titles mb-20">
+					<div className="font-titles mb-10">
 						<h1>Upcoming Event</h1>
 					</div>
-					<div id="events_container" className="max-h-10">
+					<div id="events_container" className="">
 						<UpcomingArea />
 					</div>
 				</div>

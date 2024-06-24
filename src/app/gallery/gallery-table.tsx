@@ -29,7 +29,7 @@ export default function GalleryTable(full_data) {
 	}, [searchTerm]);
 
 	return (
-		<div className="m-20">
+		<div className="my-20 mx-32">
 			<div className="flex items-center py-4 justify-between">
 				<Input
 					type="search"

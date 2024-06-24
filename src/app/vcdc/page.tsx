@@ -33,7 +33,7 @@ const VCDC = () => {
 				</div>
 			</div>
 			<div className="text-center items-center my-8" id="perform">
-				<div className="font-titles">
+				<div className="font-titles mb-10">
 					<h1>Past Performances</h1>
 				</div>
 				<div>
