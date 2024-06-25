@@ -29,7 +29,7 @@ export default function GalleryTable(full_data) {
 	}, [searchTerm]);
 
 	return (
-		<div className="m-20">
+		<div className="my-20 mx-32">
 			<div className="flex items-center py-4 justify-between">
 				<Input
 					type="search"
@@ -54,10 +54,11 @@ export default function GalleryTable(full_data) {
 										cover_picture={item.thumbnail}
 										rotation={randomAngle}
 									/>
-									<div className="my-10">
+									<div className="my-10 max-w-[75%]">
 										<h1>{item.event_name}</h1>
 										<h2>{date.toDateString()} | 9:00 - 10:30 PM</h2>
 										<h2>{item.location}</h2>
+										<p>{item.event_desc}</p>
 									</div>
 								</div>
 							</div>

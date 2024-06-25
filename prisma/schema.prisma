@@ -43,3 +43,12 @@ model GalleryItem {
   thumbnail  String
   semester   String
 }
+
+model UpcomingEvent {
+  id         Int       @id @default(autoincrement())
+  event_name String
+  event_date DateTime?
+  location   String?
+  event_desc String?
+  thumbnail  String
+}
