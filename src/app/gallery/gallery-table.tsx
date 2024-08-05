@@ -48,12 +48,14 @@ export default function GalleryTable(full_data) {
 							<div key={item.id} className="flex-col">
 								<Separator />
 								<div className="flex" id="gallery_item_whole">
-									<GalleryPhotocard
-										event_name={item.event_name}
-										date={item.event_date}
-										cover_picture={item.thumbnail}
-										rotation={randomAngle}
-									/>
+									<div className="min-w-[25%] max-h-fit">
+										<GalleryPhotocard
+											event_name={item.event_name}
+											date={item.event_date}
+											cover_picture={item.thumbnail}
+											rotation={randomAngle}
+										/>
+									</div>
 									<div className="my-10 max-w-[75%]">
 										<h1>{item.event_name}</h1>
 										<h2>{date.toDateString()} | 9:00 - 10:30 PM</h2>
