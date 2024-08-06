@@ -2,7 +2,7 @@
 	grid-row-gap: 25px;
 	grid-template-columns: repeat(auto-fit, minmax(375px, 1fr));
 }
-#gallery_item_whole {
+#gallery_item {
 	transition: 0.2s ease-in-out;
 }
 #gallery_item {
@@ -10,7 +10,7 @@
 		0 6px 20px 0 rgba(180, 224, 220, 0.19);
 }
 
-#gallery_item_whole:hover {
+#gallery_item:hover {
 	transform: scale(1.05);
 }
 

@@ -11,7 +11,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import prisma from "@/lib/prisma";
 import { ColumnDef } from "@tanstack/react-table";
-import { MoreHorizontal } from "lucide-react";
+import { ArrowUpDown, MoreHorizontal } from "lucide-react";
 
 // Create new type GalleryItem with the following fields and matching with the Prisma schema
 export type GalleryItem = {
@@ -37,7 +37,20 @@ export const columns: ColumnDef<GalleryItem>[] = [
 		),
 	},
 	{ accessorKey: "event_name", header: "Event Name" },
-	{ accessorKey: "event_date", header: "Event Date" },
+	{
+		accessorKey: "event_date",
+		header: ({ column }) => {
+			return (
+				<Button
+					variant="ghost"
+					onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+				>
+					Event Date
+					<ArrowUpDown className="ml-2 h-4 w-4" />
+				</Button>
+			);
+		},
+	},
 	{ accessorKey: "location", header: "Event Location" },
 	{ accessorKey: "thumbnail", header: "Photo URL" },
 	{ accessorKey: "semester", header: "Semester" },
