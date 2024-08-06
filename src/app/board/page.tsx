@@ -15,7 +15,7 @@ function ExecutiveBoard({ members }: { members: any }) {
 	return members == null ? (
 		<></>
 	) : (
-		<div className="p-10 items-center grid phone:p-5" id="board">
+		<div className="p-5 lg:p-10 items-center grid" id="board">
 			{members.map((item) => (
 				<BoardPort
 					key={item.positional_id}

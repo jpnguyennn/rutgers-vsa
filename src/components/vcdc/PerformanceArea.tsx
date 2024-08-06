@@ -15,7 +15,7 @@ export default async function PerformanceArea() {
 	const performanceData = await getPerformanceData();
 
 	return (
-		<div className="mx-32 grid pt-8" id="performance-area">
+		<div className="align-center lg:mx-32 grid pt-8" id="performance-area">
 			{performanceData.items.map(({ id, snippet }) => {
 				const { title, thumbnails, resourceId } = snippet;
 				const { medium } = thumbnails;

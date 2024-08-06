@@ -29,7 +29,7 @@ export default function GalleryTable(full_data) {
 	}, [searchTerm]);
 
 	return (
-		<div className="my-20 mx-32">
+		<div className="my-20 mx-8 lg:mx-32">
 			<div className="flex items-center py-4 justify-between">
 				<Input
 					type="search"
@@ -47,19 +47,17 @@ export default function GalleryTable(full_data) {
 						return (
 							<div key={item.id} className="flex-col">
 								<Separator />
-								<div className="flex" id="gallery_item_whole">
-									<div className="min-w-[25%] max-h-fit">
-										<GalleryPhotocard
-											event_name={item.event_name}
-											date={item.event_date}
-											cover_picture={item.thumbnail}
-											rotation={randomAngle}
-										/>
-									</div>
-									<div className="my-10 max-w-[75%]">
-										<h1>{item.event_name}</h1>
-										<h2>{date.toDateString()} | 9:00 - 10:30 PM</h2>
-										<h2>{item.location}</h2>
+								<div className="sm:align-center flex flex-col lg:flex-row" id="gallery_item_whole">
+									<GalleryPhotocard
+										event_name={item.event_name}
+										date={item.event_date}
+										cover_picture={item.thumbnail}
+										rotation={randomAngle}
+									/>
+									<div className="sm:text-center my-10 lg:max-w-[75%]">
+										<h1 className="sm:text-[2.5rem]">{item.event_name}</h1>
+										<h2 className="sm:text-[1rem]">{date.toDateString()} | 9:00 - 10:30 PM</h2>
+										<h2 className="sm:text-[1rem]">{item.location}</h2>
 										<p>{item.event_desc}</p>
 									</div>
 								</div>
