@@ -81,8 +81,9 @@ const config = {
 			"board-name": ["var(--font-windsong)", "monospace"],
 		},
 		screens: {
-			phone: { max: "640px" },
-			tablet: { max: "1007px" },
+			sm: {max: "640px"},
+			md: { min: "641px" },
+			lg: { min: "1008px" },
 		},
 	},
 	plugins: [require("tailwindcss-animate")],

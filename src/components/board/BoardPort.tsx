@@ -19,7 +19,7 @@ function BoardPort({
 	return (
 		<div>
 			<div
-				className="m-10 p-4 min-h-full sticky justify-center items-center phone:my-5 phone:p-2"
+				className="m-10 my-5 p-2 min-h-full sticky justify-center items-center lg:my-10 lg:p-4"
 				id="board_port"
 			>
 				<div className="m-7">

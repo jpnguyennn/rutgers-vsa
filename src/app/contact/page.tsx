@@ -18,20 +18,16 @@ export default async function Contact() {
 
 	return (
 		<>
-			<div className="my-20 mx-auto justify-center text-center ">
+			<div className="my-20 mx-auto justify-center text-center">
 				<h1>Contact Us</h1>
 			</div>
-			<div className="justify-center items-center flex">
-				<div className="m-8 inline-flex" id="contact_container">
+			<div className="justify-center items-center flex flex-col lg:flex-row">
+				<div className="mx-8 lg:my-8 lg:inline-flex" id="contact_container">
 					<div
-						className="mx-16 my-0 border-r-[0.25rem] border-[rgb(156, 156, 156)] border-solid"
+						className="mx-16 my-0 sm:border-b-[0.25rem] lg:border-r-[0.25rem] border-[rgb(156, 156, 156)] border-solid"
 						id="column_left"
 					>
-						<div className="p-20" id="emails">
-							<h1 className="mb-8">
-								Contact us individually:
-								<br />
-							</h1>
+						<div className="p-20 text-center" id="emails">
 							<p className="mb-8">
 								<strong>For general information:</strong>{" "}
 								<a href="mailto:rutgersvsa@gmail.com">rutgersvsa@gmail.com</a>
@@ -47,8 +43,8 @@ export default async function Contact() {
 					</div>
 
 					<div>
-						<div className="p-16">
-							<h1 className="text-5xl">Follow Us On Our Socials</h1>
+						<div className="p-16 text-center">
+							<h1 className="lg:text-5xl">Follow Us!</h1>
 							<div>
 								<SocialsArea />
 							</div>

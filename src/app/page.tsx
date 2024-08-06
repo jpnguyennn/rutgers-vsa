@@ -1,38 +1,33 @@
 import UpcomingArea from "@/components/upcoming/UpcomingArea";
-import Head from "next/head";
-import Image from "next/image";
 import React from "react";
 import "./home.css";
 
 export default function Home() {
-	const stt = require("@/images/stt.jpg");
-	const missasia = require("@/images/missasia.jpg");
-
 	return (
 		<>
 			<div>
-				<div
-					className="hero-bg bg-home-hero h-screen min-h-screen flex justify-center items-center phone:min-h-[50vh]"
-					id="hero"
-				>
-					<div className="leading-8 text-white bg-[rgba(249,241,241,0.25)] py-24 px-12 max-w-4xl border-2 border-white border-solid flex-col text-center phone:text">
-						<h1 className="leading-[5.5rem] text-[4rem] font-titles font-bold">
-							RUTGERS VIETNAMESE STUDENT ASSOCIATION
-						</h1>
-						<p className="text-[1.5rem]">
-							Welcome to the RUVSA webpage! Enjoy your stay and explore what our
-							organization has to offer.
-						</p>
+
+					<div
+						className="hero-bg bg-home-hero justify-center items-center h-[50vh] lg:h-screen flex"
+						id="hero"
+					>
+						<div className="leading-8 text-white m-auto max-w-4xl md:border-2 md:border-white border-solid flex-col text-center phone:text">
+							<div className="lg:bg-[rgba(249,241,241,0.25)] lg:px-12">
+								<h1 className="text-[2rem] leading-[2.5rem] md:leading-[5.5rem] md:text-[4rem] font-titles font-bold">
+									RUTGERS UNIVERSITY VIETNAMESE STUDENT ASSOCIATION
+								</h1>
+							</div>
+						</div>
 					</div>
-				</div>
+
 				<div
-					className="m-auto min-h-[600px] grid max-w-4xl content-center text-center"
+					className="my-8 px-4 lg:m-auto min-h-[600px] grid lg:max-w-4xl content-center text-center"
 					id="about"
 				>
 					<div className="m-13 mb-10 text-5xl font-titles">
 						<h1>About Rutgers VSA</h1>
 					</div>
-					<div className="py-0 px-20 text-[1.05em]">
+					<div className="lg:px-20 text-[1.05em]">
 						<p className="leading-10">
 							Our mission in the Vietnamese Student Association (VSA) at Rutgers
 							University is to promote awareness and appreciation of the
@@ -50,7 +45,7 @@ export default function Home() {
 					</div>
 				</div>
 
-				<div className="mb-8 min-h-[30rem] grid text-center" id="upcoming">
+				<div className="mb-8 min-h-[30rem] lg:grid text-center" id="upcoming">
 					<div className="font-titles mb-10">
 						<h1>Upcoming Event</h1>
 					</div>

@@ -1,6 +1,5 @@
 import { IconDefinition } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import build from "next/dist/build";
 import React from "react";
 
 const SocialsItem = ({
@@ -13,13 +12,13 @@ const SocialsItem = ({
 	title: string;
 }) => {
 	return (
-		<div className="my-6 p-8 min-w-full border-[rgba(224,138,127,0.34)] border-4">
+		<div className="my-6 py-6 lg:p-8 border-[rgba(224,138,127,0.34)] border-4">
 			<a
-				className="flex text-3xl text-center justify-center text-[rgb(60,152,160)]
+				className="flex text-2xl lg:text-3xl text-center justify-center text-[rgb(60,152,160)]
          "
 				href={link}
 			>
-				<FontAwesomeIcon icon={type} className="text-4xl mr-8" />
+				<FontAwesomeIcon icon={type} className="text-3xl lg:text-4xl mr-8" />
 				<p className="font-titles ">{title}</p>
 			</a>
 		</div>
