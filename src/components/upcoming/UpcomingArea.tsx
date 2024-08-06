@@ -19,10 +19,10 @@ export default async function UpcomingArea() {
 	};
 
 	return data.season == "spring" || data.season == "fall" ? (
-		<div className="grid justify-center mx-32">
+		<div className="grid justify-center mx-16 lg:mx-32">
 			<div className="block">
-				<div className="flex">
-					<div className="min-w-[300px]">
+				<div className="lg:flex">
+					<div className="lg:min-w-[300px]">
 						<AspectRatio ratio={1} className="">
 							<Image
 								src={data.thumbnail}
@@ -32,7 +32,7 @@ export default async function UpcomingArea() {
 							/>
 						</AspectRatio>
 					</div>
-					<div className="ml-20 flex-col text-left">
+					<div className="lg:ml-20 flex-col text-center lg:text-left">
 						<h1>{data.event_name}</h1>
 						<h2>{data.event_date.toDateString()} | 9:00 - 10:30 PM</h2>
 						<p className="mt-10">{data.event_desc}</p>

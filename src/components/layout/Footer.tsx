@@ -28,10 +28,10 @@ const Footer = () => {
 	return (
 		<footer>
 			<div
-				className="bg-[rgb(27,18,4)] p-[50px] text-white flex phone:block"
+				className="bg-[rgb(27,18,4)] p-[50px] text-white align-center flex flex-col lg:flex-row"
 				id="footer"
 			>
-				<div className="min-w-[70%]">
+				<div className="min-w-full lg:min-w-[70%]">
 					<Link href="/">
 						<Image src={logo} alt="VSA LOGO" width={200} height={200} />
 					</Link>
@@ -106,7 +106,7 @@ const Footer = () => {
 				id="copyright"
 			>
 				<p>
-					&copy; JohnPaul Nguyen 2023 -{" "}
+					&copy; JohnPaul Nguyen 2023-2024 -{" "}
 					<Link href="mailto: johnpaulnguyen0504@gmail.com">
 						Contact Webmaster
 					</Link>
