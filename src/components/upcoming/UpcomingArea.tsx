@@ -7,15 +7,14 @@ export default async function UpcomingArea() {
 	// const upcomingData = await getUpcomingData();
 	const data = {
 		id: 1,
-		season: "spring",
-		event_name: "Train to Vietnam (in Real Life!)",
-		event_date: new Date(2024, 3, 18, 9, 0, 0),
+		season: "fall",
+		event_name: "Voyage to VSA",
+		event_date: new Date(2024, 9, 5, 9, 0, 0),
 		location: "Busch Student Center - MPR",
 		event_desc:
-			"🚊💨𝖢𝖧𝖮𝖮𝖢𝖧𝖮𝖮彡🚊˚꩜.ᐟ.ᐟ" +
-			"˚⊹👨🏻‍✈️🗯️Attention Passagers: This is the conductor speaking. You’re currently on the 𝐕𝐒𝐀-𝖳𝗋𝖺𝗂𝗇 𝗍𝗈 𝖵𝗂𝖾𝗍𝗇𝖺𝗆, and we are now approaching…𝐁𝐔𝐒𝐂𝐇 𝐌𝐏𝐑?!🏝️  🌈⭑ .ᐟ👅That’s right!! We’re bringing our cultural Train to Vietnam instagram posts to you —> IN PERSON?!‼️ChooChooWooHoo   𝖨𝖭𝖳𝖱𝖮𝖣𝖴𝖢𝖨𝖭𝖦: ˚⊹🚂𝐓𝐫𝐚𝐢𝐧 𝐓𝐨 𝐕𝐢𝐞𝐭𝐧𝐚𝐦🌾⭑   We’re sad to introduce to you, our 𝐋𝐀𝐒𝐓 𝐆𝐈𝐌 of the semester😢🙁. Come visit different Vietnamese Provinces📍, play cool games👾, and win prizes🏆!! We will be providing 🧁snacks and 🧃drinks for everyone!👯‍♂️   👋🏼Come hang with us one last time!😿😿",
+			"𝑨𝒉𝒐𝒚, friends! 🚢 ࿐ ࿔*:･ﾟ Get ready to set sail on our Voyage to VSA! 🌟 Join us for our first event back as we kick off an exciting new chapter. It’s going to be a fun day of reconnecting, adventure, and making memories ᡣ𐭩 Don’t miss out! Let’s set sail together! ࿔:･ﾟ (Heard you could win a sonny angel or jbl speaker 🫢)Everyone is welcome to our event! Hope to see you there (*ᴗ͈ˬᴗ͈)ꕤ*.ﾟ",
 		thumbnail:
-			"https://res.cloudinary.com/rutgers-vsa/image/upload/v1719353339/kzr4cruognr8e0tmusly.jpg",
+			"https://res.cloudinary.com/rutgers-vsa/image/upload/v1725423286/m5qbtcawpevvhutwqvkp.jpg",
 	};
 
 	return data.season == "spring" || data.season == "fall" ? (
@@ -34,7 +33,9 @@ export default async function UpcomingArea() {
 					</div>
 					<div className="lg:ml-20 flex-col text-center lg:text-left">
 						<h1>{data.event_name}</h1>
-						<h2>{data.event_date.toDateString()} | 9:00 - 10:30 PM</h2>
+						<h2>
+							{data.event_date.toDateString()} | 9:00 - 10:30 PM
+						</h2>
 						<p className="mt-10">{data.event_desc}</p>
 					</div>
 				</div>

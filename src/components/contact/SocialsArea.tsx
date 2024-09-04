@@ -22,6 +22,11 @@ const SocialsArea = () => {
 				title="@rutgers_vsa"
 			/>
 			<SocialsItem
+				type={faInstagram}
+				link="https://www.instagram.com/rutgers.vcdc/"
+				title="@rutgers.vcdc"
+			/>
+			<SocialsItem
 				type={faYoutube}
 				link="https://www.youtube.com/channel/UCEMUV6xxQXS6IkciJuEkHoA/"
 				title="@Rutgers VSA"
