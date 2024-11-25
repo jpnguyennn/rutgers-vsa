@@ -8,13 +8,13 @@ export default async function UpcomingArea() {
 	const data = {
 		id: 1,
 		season: "fall",
-		event_name: "Voyage to VSA",
-		event_date: new Date(2024, 9, 5, 9, 0, 0),
+		event_name: "Chips and Challenges",
+		event_date: new Date(2024, 11, 21, 9, 0, 0),
 		location: "Busch Student Center - MPR",
 		event_desc:
-			"𝑨𝒉𝒐𝒚, friends! 🚢 ࿐ ࿔*:･ﾟ Get ready to set sail on our Voyage to VSA! 🌟 Join us for our first event back as we kick off an exciting new chapter. It’s going to be a fun day of reconnecting, adventure, and making memories ᡣ𐭩 Don’t miss out! Let’s set sail together! ࿔:･ﾟ (Heard you could win a sonny angel or jbl speaker 🫢)Everyone is welcome to our event! Hope to see you there (*ᴗ͈ˬᴗ͈)ꕤ*.ﾟ",
+			"Feeling a little 𝓁𝓊𝒸𝓀𝓎? 🍀 . ݁₊ ⊹ . ݁˖ . ݁༉‧₊˚. . ݁₊ ⊹ . ݁˖ . ݁༉‧₊˚. . ݁₊ ⊹ . ݁˖ . ݁༉‧₊˚. . ݁₊ ⊹ . ݁˖ . ݁༉‧₊˚.➽ 𝐩𝐫𝐞𝐬𝐞𝐧𝐭𝐢𝐧𝐠 : 𝑪𝒉𝒊𝒑𝒔 & 𝑪𝒉𝒂𝒍𝒍𝒆𝒏𝒈𝒆𝒔 Get ready for an 𝙪𝙣𝙛𝙤𝙧𝙜𝙚𝙩𝙩𝙖𝙗𝙡𝙚 night filled with games and plenty of prizes presented by Rutgers VSA & RCC & ASC. Whether you’re here to win 𝐛𝐢𝐠 or just enjoy the 𝚟𝚒𝚋𝚎𝚜, we’ve got something for everyone. Bring your friends, bring your luck, and let’s make it a night to remember!",
 		thumbnail:
-			"https://res.cloudinary.com/rutgers-vsa/image/upload/v1725423286/m5qbtcawpevvhutwqvkp.jpg",
+			"https://res.cloudinary.com/rutgers-vsa/image/upload/v1732508681/rcc_x_vsa_8_kuvqfh.png",
 	};
 
 	return data.season == "spring" || data.season == "fall" ? (
