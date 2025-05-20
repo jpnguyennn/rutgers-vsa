@@ -48,7 +48,7 @@ export default function Home() {
 				>
 					<div className="lg:px-20 text-[1.25rem]">
 						<p className="leading-8">
-							The Rutgers Vietnamese Student Association's (VSA)
+							The Rutgers Vietnamese Student Association&apos;s (VSA)
 							mission is to promote awareness and appreciation of
 							the Vietnamese culture. VSA is open to people of all
 							cultures, ethnicities, and backgrounds, and
