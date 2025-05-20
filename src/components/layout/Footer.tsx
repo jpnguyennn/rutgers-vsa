@@ -33,7 +33,12 @@ const Footer = () => {
 			>
 				<div className="min-w-full lg:min-w-[70%]">
 					<Link href="/">
-						<Image src={logo} alt="VSA LOGO" width={200} height={200} />
+						<Image
+							src={logo}
+							alt="VSA LOGO"
+							width={200}
+							height={200}
+						/>
 					</Link>
 				</div>
 				<div className="flex">
@@ -49,7 +54,10 @@ const Footer = () => {
 								className="my-2"
 								id="footer_item"
 							>
-								<FooterLinkItem active={activeIdx === idx} {...menu} />
+								<FooterLinkItem
+									active={activeIdx === idx}
+									{...menu}
+								/>
 							</div>
 						))}
 					</div>
@@ -63,15 +71,22 @@ const Footer = () => {
 									href="https://www.instagram.com/rutgers_vsa/"
 									target="_blank"
 								>
-									<FontAwesomeIcon icon={faInstagram}></FontAwesomeIcon>
+									<FontAwesomeIcon
+										icon={faInstagram}
+									></FontAwesomeIcon>
 								</a>
 							</div>
 							<div
 								className="bg-[rgb(255,247,240)] w-[2.15em] text-center text-black text-[1.5rem] p-2 mr-3 rounded-full"
 								id="social_bubble"
 							>
-								<a href="https://www.facebook.com/VSArutgers/" target="_blank">
-									<FontAwesomeIcon icon={faFacebook}></FontAwesomeIcon>
+								<a
+									href="https://www.facebook.com/VSArutgers/"
+									target="_blank"
+								>
+									<FontAwesomeIcon
+										icon={faFacebook}
+									></FontAwesomeIcon>
 								</a>
 							</div>
 							<div
@@ -82,7 +97,9 @@ const Footer = () => {
 									href="https://www.youtube.com/channel/UCEMUV6xxQXS6IkciJuEkHoA/"
 									target="_blank"
 								>
-									<FontAwesomeIcon icon={faYoutube}></FontAwesomeIcon>
+									<FontAwesomeIcon
+										icon={faYoutube}
+									></FontAwesomeIcon>
 								</a>
 							</div>
 						</div>
@@ -106,7 +123,7 @@ const Footer = () => {
 				id="copyright"
 			>
 				<p>
-					&copy; JohnPaul Nguyen 2023-2024 -{" "}
+					&copy; JohnPaul Nguyen 2023-2025 -{" "}
 					<Link href="mailto: johnpaulnguyen0504@gmail.com">
 						Contact Webmaster
 					</Link>

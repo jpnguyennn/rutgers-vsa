@@ -70,9 +70,13 @@ const config = {
 			},
 			backgroundImage: {
 				"home-hero":
-					"linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/hero.png')",
+					"linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/home-hero.jpg')",
 				"vcdc-hero":
-					"linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/vcdc-hero.jpg')",
+					"linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/vcdc-hero.jpg')",
+				"vcdc-past":
+					"linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/vcdc-past.jpg')",
+				"vcdc-join":
+					"linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/vcdc-join.jpg')",
 			},
 		},
 		fontFamily: {
@@ -81,7 +85,7 @@ const config = {
 			"board-name": ["var(--font-windsong)", "monospace"],
 		},
 		screens: {
-			sm: {max: "640px"},
+			sm: { max: "640px" },
 			md: { min: "641px" },
 			lg: { min: "1008px" },
 		},
