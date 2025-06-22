@@ -21,7 +21,7 @@
 		"@neondatabase/serverless": "^0.9.3",
 		"@next/mdx": "^14.2.3",
 		"@prisma/adapter-neon": "^5.14.0",
-		"@prisma/client": "^5.14.0",
+		"@prisma/client": "^6.10.1",
 		"@radix-ui/react-aspect-ratio": "^1.0.3",
 		"@radix-ui/react-checkbox": "^1.0.4",
 		"@radix-ui/react-dialog": "^1.0.5",
@@ -67,7 +67,7 @@
 	"devDependencies": {
 		"@react-hook/window-size": "^3.1.1",
 		"babel-plugin-superjson-next": "^0.4.5",
-		"prisma": "^5.14.0",
+		"prisma": "^6.10.1",
 		"react-youtube": "^10.1.0",
 		"superjson": "^1.13.3"
 	}

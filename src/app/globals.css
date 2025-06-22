@@ -96,6 +96,7 @@ body {
 		)
 		rgb(var(--background-start-rgb));
 }
+
 header {
 	position: sticky;
 	z-index: 30;
