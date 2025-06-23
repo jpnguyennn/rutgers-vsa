@@ -1,18 +1,10 @@
-import { Pool } from "@neondatabase/serverless";
-import { PrismaNeon } from "@prisma/adapter-neon";
-import { PrismaClient } from "@prisma/client";
+import prisma from "@/lib/prisma";
 import { NextResponse } from "next/server";
 
 export const dynamic = "force-dynamic";
 
 export async function GET(request: Request) {
 	try {
-		const neon = new Pool({
-			connectionString: process.env.POSTGRES_PRISMA_URL,
-		});
-		const adapter = new PrismaNeon(neon);
-		const prisma = new PrismaClient({ adapter });
-
 		const users = await prisma.galleryItem.findMany();
 
 		return NextResponse.json(users, { status: 200 });
