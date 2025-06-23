@@ -1,6 +1,4 @@
 import prisma from "@/lib/prisma";
-import { Pool } from "@neondatabase/serverless";
-import { PrismaNeon } from "@prisma/adapter-neon";
 import { NextResponse } from "next/server";
 
 export const dynamic = "force-dynamic";
