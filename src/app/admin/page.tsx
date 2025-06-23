@@ -1,13 +1,12 @@
 "use client";
 
 import { Separator } from "@/components/ui/separator";
-import Image from "next/image";
 
 export default function Home() {
 	return (
 		<div className=" justify-center items-center text-center m-auto">
-			<h1>Welcome!</h1>
-			<Separator />
+			<h1 className="font-5xl">Welcome!</h1>
+			<Separator className="my-5" />
 			<h3>
 				First Time Here?
 				<br />

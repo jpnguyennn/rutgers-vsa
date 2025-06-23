@@ -1,9 +1,10 @@
 import React from "react";
 
-const GalleryYear = ({ params }: { params: { slug: string } }) => {
-	console.log("params.slug", params.slug);
+const GalleryYear = async (props: { params: Promise<{ slug: string }> }) => {
+    const params = await props.params;
+    console.log("params.slug", params.slug);
 
-	return (
+    return (
 		<div>
 			<h1>HIIII: {params.slug}</h1>
 		</div>

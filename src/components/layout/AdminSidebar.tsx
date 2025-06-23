@@ -83,19 +83,19 @@ export default function AdminSidebar({}: Props) {
 						title: "Board Members",
 						icon: UserCog,
 						variant: "ghost",
-						href: "/admin/db-board",
+						href: "/admin/board",
 					},
 					{
 						title: "Interns",
 						icon: UserCog,
 						variant: "ghost",
-						href: "/admin/db-interns",
+						href: "/admin/interns",
 					},
 					{
 						title: "Gallery",
 						icon: CloudCog,
 						variant: "ghost",
-						href: "/admin/db-gallery",
+						href: "/admin/gallery",
 					},
 				]}
 			/>

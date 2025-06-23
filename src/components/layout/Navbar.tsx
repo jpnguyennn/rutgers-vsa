@@ -1,8 +1,6 @@
 "use client";
 
 import logo from "@/images/extLogo.png";
-import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
