@@ -18,7 +18,7 @@ export default function AdminLogin() {
 	useEffect(() => {
 		getSession().then((session) => {
 			if (session) {
-				router.push("/dashboard");
+				router.push("/admin");
 			}
 		});
 	});
@@ -37,7 +37,7 @@ export default function AdminLogin() {
 			if (result?.error) {
 				setError("Invalid Credentials");
 			} else {
-				router.push("/dashboard");
+				router.push("/admin");
 			}
 		} catch (error) {
 			console.log(error);
@@ -54,8 +54,8 @@ export default function AdminLogin() {
 				<div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-2xl p-8 border border-white/20">
 					{/* Header */}
 					<div className="text-center mb-[32px]">
-						<h1 className="text-2xl font-bold text-gray-900 mb-2">
-							Log In
+						<h1 className="text-3xl font-bold text-gray-900 mb-2">
+							Admin Log In
 						</h1>
 					</div>
 
@@ -147,7 +147,7 @@ export default function AdminLogin() {
 						<button
 							onClick={handleSubmit}
 							disabled={isLoading || !email || !password}
-							className="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white bg-hero hover:bg-orange-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-hero disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+							className="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white bg-orange-500 hover:bg-orange-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-hero disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
 						>
 							{isLoading ? (
 								<div className="flex items-center">

@@ -56,12 +56,20 @@ const config = {
 			},
 			keyframes: {
 				"accordion-down": {
-					from: { height: "0" },
-					to: { height: "var(--radix-accordion-content-height)" },
+					from: {
+						height: "0",
+					},
+					to: {
+						height: "var(--radix-accordion-content-height)",
+					},
 				},
 				"accordion-up": {
-					from: { height: "var(--radix-accordion-content-height)" },
-					to: { height: "0" },
+					from: {
+						height: "var(--radix-accordion-content-height)",
+					},
+					to: {
+						height: "0",
+					},
 				},
 			},
 			animation: {
@@ -70,13 +78,13 @@ const config = {
 			},
 			backgroundImage: {
 				"home-hero":
-					"linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/home-hero.jpg')",
+					"linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)) bg-[url(/../public/images/home-hero.jpg)]",
 				"vcdc-hero":
-					"linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/vcdc-hero.jpg')",
+					"linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)) bg-[url(/images/vcdc-hero.jpg)]",
 				"vcdc-past":
-					"linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/vcdc-past.jpg')",
+					"linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)) bg-[url(/images/vcdc-past.jpg)]",
 				"vcdc-join":
-					"linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/vcdc-join.jpg')",
+					"linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)) bg-[url(/images/vcdc-join.jpg)]",
 			},
 		},
 		fontFamily: {
@@ -85,9 +93,15 @@ const config = {
 			"board-name": ["var(--font-windsong)", "monospace"],
 		},
 		screens: {
-			sm: { max: "640px" },
-			md: { min: "641px" },
-			lg: { min: "1008px" },
+			sm: {
+				max: "640px",
+			},
+			md: {
+				min: "641px",
+			},
+			lg: {
+				min: "1008px",
+			},
 		},
 	},
 	plugins: [require("tailwindcss-animate")],

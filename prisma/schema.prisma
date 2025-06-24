@@ -5,8 +5,8 @@ generator client {
 
 datasource db {
   provider  = "postgresql"
-  url       = env("POSTGRES_PRISMA_URL") // uses connection pooling
-  directUrl = env("POSTGRES_URL_NON_POOLING") // uses a direct connection
+  url       = env("POSTGRES_PRISMA_URL")
+  directUrl = env("POSTGRES_URL_NON_POOLING")
 }
 
 model BoardMember {
@@ -21,7 +21,7 @@ model BoardMember {
   year          Int?
   major         String?
   why_vsa       String?
-  slug          String
+  minor         String?
 }
 
 model Intern {
@@ -38,10 +38,10 @@ model GalleryItem {
   id         Int       @id @default(autoincrement())
   event_name String
   event_date DateTime?
-  location   String?
   event_desc String?
   thumbnail  String
   semester   String
+  location   String?
 }
 
 model UpcomingEvent {
