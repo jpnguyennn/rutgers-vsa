@@ -49,6 +49,7 @@ export function EditInternForm() {
 			year: values.year,
 			major: values.major,
 		});
+		console.log(createdIntern);
 	}
 
 	return (
@@ -63,7 +64,9 @@ export function EditInternForm() {
 							<FormControl>
 								<Input placeholder="John Doe" {...field} />
 							</FormControl>
-							<FormDescription>Full name of the intern.</FormDescription>
+							<FormDescription>
+								Full name of the intern.
+							</FormDescription>
 							<FormMessage />
 						</FormItem>
 					)}
@@ -91,7 +94,9 @@ export function EditInternForm() {
 							<FormControl>
 								<Input placeholder="john.doe" {...field} />
 							</FormControl>
-							<FormDescription>Facebook handle of intern.</FormDescription>
+							<FormDescription>
+								Facebook handle of intern.
+							</FormDescription>
 							<FormMessage />
 						</FormItem>
 					)}
@@ -105,7 +110,9 @@ export function EditInternForm() {
 							<FormControl>
 								<Input placeholder="john.doe" {...field} />
 							</FormControl>
-							<FormDescription>Instagram handle of intern.</FormDescription>
+							<FormDescription>
+								Instagram handle of intern.
+							</FormDescription>
 							<FormMessage />
 						</FormItem>
 					)}
@@ -117,9 +124,15 @@ export function EditInternForm() {
 						<FormItem>
 							<FormLabel>Year</FormLabel>
 							<FormControl>
-								<Input type="number" placeholder="2026" {...field} />
+								<Input
+									type="number"
+									placeholder="2026"
+									{...field}
+								/>
 							</FormControl>
-							<FormDescription>Graduating year of the intern.</FormDescription>
+							<FormDescription>
+								Graduating year of the intern.
+							</FormDescription>
 							<FormMessage />
 						</FormItem>
 					)}
@@ -131,7 +144,10 @@ export function EditInternForm() {
 						<FormItem>
 							<FormLabel>Major(s)</FormLabel>
 							<FormControl>
-								<Input placeholder="Computer Science" {...field} />
+								<Input
+									placeholder="Computer Science"
+									{...field}
+								/>
 							</FormControl>
 							<FormDescription>
 								Major(s) belonging to the intern.

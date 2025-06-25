@@ -1,5 +1,4 @@
 import { BoardMemberSchema } from "@/components/forms/admin_board_member";
-import { BoardMember } from "@/components/interfaces/admin";
 import { Button } from "@/components/ui/button";
 import {
 	Form,
@@ -10,6 +9,7 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { BoardMember } from "@/lib/interfaces/admin";
 import { zodResolver } from "@hookform/resolvers/zod";
 
 import { useForm } from "react-hook-form";

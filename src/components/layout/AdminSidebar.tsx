@@ -14,9 +14,7 @@ import React, { useState } from "react";
 import { Button } from "../ui/button";
 import { Nav } from "./AdminNav";
 
-type Props = {};
-
-export default function AdminSidebar({}: Props) {
+export default function AdminSidebar() {
 	const [isCollapsed, setIsCollapsed] = useState(false);
 
 	const windowWidth = useWindowWidth();

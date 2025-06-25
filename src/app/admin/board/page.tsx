@@ -11,20 +11,9 @@ import {
 
 import { AddBoardMemberForm } from "@/components/admin/board/BoardMemberAdd";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { BoardMember } from "@prisma/client";
 import { CirclePlus } from "lucide-react";
 
-async function getBoardMemberData(): Promise<BoardMember[]> {
-	const boardMembers = await fetch("http://ruvsa.vercel.app/api/board", {
-		next: { revalidate: 1 },
-	});
-
-	return boardMembers.json();
-}
-
 export default async function BoardDatabase() {
-	const data = await getBoardMemberData();
-
 	return (
 		<div>
 			<h1>Edit Board Members Database</h1>

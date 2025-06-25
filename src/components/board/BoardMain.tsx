@@ -1,19 +1,49 @@
+"use client"
+
 import "@/styles/board.css";
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { BoardMember } from "../../lib/interfaces/admin";
 import BoardPort from "./BoardPort";
 
-const BoardMain = ({ board_members }: { board_members: any }) => {
+const BoardMain = () => {
+	const [boardMembers, setBoardMembers] = useState<BoardMember[]>([]);
+
+	useEffect(() => {
+		const fetchBoardMembers = async () => {
+			try {
+				const response = await fetch("/api/board");
+
+				if (!response.ok) {
+					throw new Error("Failed to fetch board member data");
+				}
+
+				const data = await response.json();
+
+				data.sort((a, b) => {
+					return a.positional_id - b.positional_id;
+				});
+
+				setBoardMembers(data);
+			} catch (error) {
+				console.error("Failed to fetch board members: ", error);
+			}
+		};
+
+		fetchBoardMembers();
+	}, []);
+
 	return (
 		<>
 			<div className="p-10 items-center grid phone:p-5" id="board">
-				{board_members.map((item) => (
-					<BoardPort
-						key={item.member_id}
-						img_url={`https://res.cloudinary.com/rutgers-vsa/${item.portrait}`}
-						fullname={item.name}
-						position={item.position}
-						insta={item.instagram}
-					/>
+				{boardMembers.map((member) => (
+					<div key={member.id}>
+						<BoardPort
+							img_url={`https://res.cloudinary.com/rutgers-vsa/${member.photo_url}`}
+							fullname={member.full_name}
+							position={member.position}
+							//insta={member.instagram}
+						/>
+					</div>
 				))}
 			</div>
 		</>

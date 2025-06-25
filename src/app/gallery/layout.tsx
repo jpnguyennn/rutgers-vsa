@@ -1,6 +1,4 @@
 import "@/app/globals.css";
-import Footer from "@/components/layout/Footer";
-import Navbar from "@/components/layout/Navbar";
 
 import { Inter, Lato, Playfair_Display, Slackside_One } from "next/font/google";
 

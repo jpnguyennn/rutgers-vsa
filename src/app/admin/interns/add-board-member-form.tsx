@@ -49,6 +49,8 @@ export function AddInternForm() {
 			year: values.year,
 			major: values.major,
 		});
+
+		console.log(createdIntern)
 	}
 
 	return (

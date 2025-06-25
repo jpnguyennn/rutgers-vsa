@@ -10,7 +10,7 @@ import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState } from "react";
+import React from "react";
 import FooterLinkItem from "./FooterLinkItem";
 
 const FOOTER_ITEMS = [
@@ -22,9 +22,6 @@ const FOOTER_ITEMS = [
 ];
 
 const Footer = () => {
-	const [navActive, setNavActive] = useState<boolean | null>(null);
-	const [activeIdx, setActiveIdx] = useState<number | null>(-1);
-
 	return (
 		<footer>
 			<div
@@ -44,18 +41,13 @@ const Footer = () => {
 				<div className="flex">
 					<div>
 						<h2>Links:</h2>
-						{FOOTER_ITEMS.map((menu, idx) => (
+						{FOOTER_ITEMS.map((menu) => (
 							<div
-								onClick={() => {
-									setActiveIdx(idx);
-									setNavActive(false);
-								}}
 								key={menu.text}
 								className="my-2"
 								id="footer_item"
 							>
 								<FooterLinkItem
-									active={activeIdx === idx}
 									{...menu}
 								/>
 							</div>

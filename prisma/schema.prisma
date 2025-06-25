@@ -32,6 +32,7 @@ model Intern {
   instagram String?
   year      Int?
   major     String?
+  minor     String?
 }
 
 model GalleryItem {

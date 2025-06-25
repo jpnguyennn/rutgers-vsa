@@ -16,17 +16,19 @@ export default function GalleryTable(full_data) {
 
 	useEffect(() => {
 		const timeoutID = setTimeout(() => {
-			searchTerm == ""
-				? setFilteredData(full_data.full_data)
-				: setFilteredData(
-						full_data.full_data.filter((item) =>
-							item.event_name.toLowerCase().includes(searchTerm.toLowerCase())
-						)
-				  );
+			setFilteredData(
+				searchTerm == ""
+					? full_data.full_data
+					: full_data.full_data.filter((item) =>
+							item.event_name
+								.toLowerCase()
+								.includes(searchTerm.toLowerCase())
+					  )
+			);
 		}, 500);
 
 		return () => clearTimeout(timeoutID);
-	}, [searchTerm]);
+	}, [full_data.full_data, searchTerm]);
 
 	return (
 		<div className="my-20 mx-8 lg:mx-32">
@@ -47,7 +49,10 @@ export default function GalleryTable(full_data) {
 						return (
 							<div key={item.id} className="flex-col">
 								<Separator />
-								<div className="sm:align-center flex flex-col lg:flex-row" id="gallery_item_whole">
+								<div
+									className="sm:align-center flex flex-col lg:flex-row"
+									id="gallery_item_whole"
+								>
 									<GalleryPhotocard
 										event_name={item.event_name}
 										date={item.event_date}
@@ -55,9 +60,16 @@ export default function GalleryTable(full_data) {
 										rotation={randomAngle}
 									/>
 									<div className="sm:text-center my-10 lg:max-w-[75%]">
-										<h1 className="sm:text-[2.5rem]">{item.event_name}</h1>
-										<h2 className="sm:text-[1rem]">{date.toDateString()} | 9:00 - 10:30 PM</h2>
-										<h2 className="sm:text-[1rem]">{item.location}</h2>
+										<h1 className="sm:text-[2.5rem]">
+											{item.event_name}
+										</h1>
+										<h2 className="sm:text-[1rem]">
+											{date.toDateString()} | 9:00 - 10:30
+											PM
+										</h2>
+										<h2 className="sm:text-[1rem]">
+											{item.location}
+										</h2>
 										<p>{item.event_desc}</p>
 									</div>
 								</div>

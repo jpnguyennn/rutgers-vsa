@@ -7,15 +7,76 @@ const retrieveBoardPositions = async () => {
 	try {
 		const boardMembers = await prisma.boardMember.findMany();
 
-		return NextResponse.json({ boardMembers }, { status: 200 });
+		return NextResponse.json(boardMembers, { status: 200 });
 	} catch (error) {
-		console.log(error);
+		console.error("Error retrieving board positions", error);
+
 		return NextResponse.json(
 			{ error: "Internal Server Error" },
 			{
 				status: 500,
 			}
 		);
+	}
+};
+
+const createBoardPosition = async (request: NextRequest) => {
+	try {
+		const body = await request.json();
+		const {
+			positional_id,
+			position,
+			vsa_email,
+			full_name,
+			photo_url,
+			facebook,
+			instagram,
+			year,
+			major,
+			minor,
+			why_vsa,
+		} = body;
+
+		const boardPosition = await prisma.boardMember.create({
+			data: {
+				positional_id,
+				position,
+				vsa_email,
+				full_name,
+				photo_url,
+				facebook,
+				instagram,
+				year,
+				major,
+				minor,
+				why_vsa,
+			},
+			select: {
+				id: true,
+			},
+		});
+
+		return NextResponse.json(
+			{ message: "Position created successfully", boardPosition },
+			{ status: 201 }
+		);
+	} catch (error) {
+		console.error("Error creating board position: ", error);
+
+		// Handle Prisma validation errors
+		if (error instanceof Error) {
+			return NextResponse.json(
+				{
+					error: "Board position with this information already exists",
+				},
+				{ status: 409 }
+			);
+		} else {
+			return NextResponse.json(
+				{ error: "Internal server error" },
+				{ status: 500 }
+			);
+		}
 	}
 };
 
@@ -69,8 +130,6 @@ const updateBoardPosition = async (request: NextRequest) => {
 		const body = await request.json();
 		const { id, ...updateData } = body;
 
-		console.log("body: ", body);
-
 		if (!id) {
 			return NextResponse.json(
 				{ error: "Board Member ID must be provided to update." },
@@ -82,8 +141,6 @@ const updateBoardPosition = async (request: NextRequest) => {
 			where: { id: id },
 			data: updateData,
 		});
-
-		console.log("boardmember: ", boardMember);
 
 		return NextResponse.json(
 			{
@@ -118,4 +175,5 @@ export {
 	deleteBoardPosition as DELETE,
 	retrieveBoardPositions as GET,
 	updateBoardPosition as PATCH,
+	createBoardPosition as POST,
 };

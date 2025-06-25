@@ -4,17 +4,15 @@ import "@/styles/board.css";
 import React from "react";
 
 function BoardPort({
-	key,
 	img_url,
 	fullname,
 	position,
-	insta,
+	//insta,
 }: {
-	key: number;
 	img_url: string;
 	fullname: string;
 	position: string;
-	insta: string;
+	//insta: string;
 }) {
 	return (
 		<div>

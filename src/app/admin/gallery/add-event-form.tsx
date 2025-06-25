@@ -59,6 +59,8 @@ export function AddEventForm() {
 			thumbnail: values.thumbnail,
 			semester: values.semester,
 		});
+
+		console.log(createdEvent);
 	}
 
 	return (
@@ -71,7 +73,11 @@ export function AddEventForm() {
 						<FormItem>
 							<FormLabel>Name of the Event</FormLabel>
 							<FormControl>
-								<Input type="text" placeholder="Train to Vietnam" {...field} />
+								<Input
+									type="text"
+									placeholder="Train to Vietnam"
+									{...field}
+								/>
 							</FormControl>
 							<FormDescription>
 								Input the name of the past event.
@@ -93,7 +99,8 @@ export function AddEventForm() {
 											variant={"outline"}
 											className={cn(
 												"w-[240px] pl-3 text-left font-normal",
-												!field.value && "text-muted-foreground"
+												!field.value &&
+													"text-muted-foreground"
 											)}
 										>
 											{field.value ? (
@@ -105,19 +112,25 @@ export function AddEventForm() {
 										</Button>
 									</FormControl>
 								</PopoverTrigger>
-								<PopoverContent className="w-auto p-0" align="start">
+								<PopoverContent
+									className="w-auto p-0"
+									align="start"
+								>
 									<Calendar
 										mode="single"
 										selected={field.value}
 										onSelect={field.onChange}
 										disabled={(date) =>
-											date > new Date() || date < new Date("1900-01-01")
+											date > new Date() ||
+											date < new Date("1900-01-01")
 										}
 										initialFocus
 									/>
 								</PopoverContent>
 							</Popover>
-							<FormDescription>Select the date of the event.</FormDescription>
+							<FormDescription>
+								Select the date of the event.
+							</FormDescription>
 							<FormMessage />
 						</FormItem>
 					)}
@@ -131,7 +144,9 @@ export function AddEventForm() {
 							<FormControl>
 								<Input placeholder="Busch MPR" {...field} />
 							</FormControl>
-							<FormDescription>Input location of the event.</FormDescription>
+							<FormDescription>
+								Input location of the event.
+							</FormDescription>
 							<FormMessage />
 						</FormItem>
 					)}
@@ -143,7 +158,10 @@ export function AddEventForm() {
 						<FormItem>
 							<FormLabel>Event Description</FormLabel>
 							<FormControl>
-								<Textarea placeholder="VSA Presents..." {...field} />
+								<Textarea
+									placeholder="VSA Presents..."
+									{...field}
+								/>
 							</FormControl>
 							<FormDescription>
 								Paste the description of the event here.
@@ -162,7 +180,8 @@ export function AddEventForm() {
 								<Input placeholder="image/..." {...field} />
 							</FormControl>
 							<FormDescription>
-								Paste the link to the cloudinary url of the image.
+								Paste the link to the cloudinary url of the
+								image.
 							</FormDescription>
 							<FormMessage />
 						</FormItem>
@@ -175,11 +194,15 @@ export function AddEventForm() {
 						<FormItem>
 							<FormLabel>Semester</FormLabel>
 							<FormControl>
-								<Input placeholder="ex. Spring 2023, Fall 2024" {...field} />
+								<Input
+									placeholder="ex. Spring 2023, Fall 2024"
+									{...field}
+								/>
 							</FormControl>
 							<FormDescription>
-								Input the semester that the event was held in. The season must
-								be capitalized and must contain the full year.
+								Input the semester that the event was held in.
+								The season must be capitalized and must contain
+								the full year.
 							</FormDescription>
 							<FormMessage />
 						</FormItem>
