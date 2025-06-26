@@ -1,5 +1,4 @@
 import React from "react";
-import "./vcdc.css";
 
 const VCDC = () => {
 	return (

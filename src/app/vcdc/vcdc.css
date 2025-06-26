@@ -1,4 +1,0 @@
-#performance-area {
-	grid-row-gap: 25px;
-	grid-template-columns: repeat(auto-fit, minmax(375px, 1fr));
-}

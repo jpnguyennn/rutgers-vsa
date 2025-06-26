@@ -34,7 +34,7 @@ const BoardMain = () => {
 
 	return (
 		<>
-			<div className="p-10 flex flex-wrap justify-center gap-4 place-content-center" id="board">
+			<div className="p-10 flex flex-wrap justify-center gap-10 place-content-center" id="board">
 				{boardMembers.map((member: BoardMember) => (
 						<div key={member.id} className="w-full md:w-[calc(50%-0.5rem)] lg:w-[calc(33.333%-0.667rem)] xl:w-[calc(25%-0.75rem)]">
 							<BoardPort

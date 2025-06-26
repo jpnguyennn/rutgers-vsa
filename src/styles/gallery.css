@@ -1,7 +1,4 @@
-#gallery {
-	grid-row-gap: 25px;
-	grid-template-columns: repeat(auto-fit, minmax(375px, 1fr));
-}
+
 #gallery_item {
 	transition: 0.2s ease-in-out;
 }
