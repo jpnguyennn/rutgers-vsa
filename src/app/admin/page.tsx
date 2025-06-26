@@ -15,6 +15,10 @@ export default function Home() {
 		}
 	}, [status, router]);
 
+	if (!session) {
+		return null;
+	}
+
 	return (
 		<div className=" justify-center items-center text-center m-auto">
 			<h1 className="font-5xl">Welcome!</h1>
