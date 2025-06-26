@@ -21,7 +21,7 @@ function BoardPort({ member }: { member: BoardMember }) {
 
 	return (
 		<div>
-			<div className="m-10 my-5 p-2 min-h-full sticky justify-center items-center lg:my-10 lg:p-4">
+			<div className="mx-5 p-2 min-h-full sticky justify-center items-center lg:p-4">
 				<div className="mb-5">
 					<div className="align-center items-center text-center justify-center font-titles max-h-[2em]">
 						<p className="text-2xl whitespace-nowrap">

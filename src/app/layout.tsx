@@ -12,6 +12,7 @@ import "@fortawesome/fontawesome-svg-core/styles.css";
 config.autoAddCss = false;
 
 import CompleteLayout from "@/components/layout/CompleteLayout";
+import NextAuthProvider from "@/components/layout/NextAuthProvider";
 
 const inter = Inter({
 	subsets: ["latin"],
@@ -53,11 +54,13 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang="en">
-			<body
-				className={`${inter.variable} ${pfdisplay.variable} ${lato.variable} ${windsong.variable} ${slackside.variable}`}
-			>
-				<CompleteLayout>{children}</CompleteLayout>
-			</body>
+			<NextAuthProvider>
+				<body
+					className={`${inter.variable} ${pfdisplay.variable} ${lato.variable} ${windsong.variable} ${slackside.variable}`}
+				>
+					<CompleteLayout>{children}</CompleteLayout>
+				</body>
+			</NextAuthProvider>
 		</html>
 	);
 }
