@@ -1,4 +1,3 @@
-import { BoardMemberSchema } from "@/components/forms/admin_board_member";
 import { Button } from "@/components/ui/button";
 import {
 	Form,
@@ -9,6 +8,7 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { BoardMemberSchema } from "@/lib/forms/admin";
 import { BoardMember } from "@/lib/interfaces/admin";
 import { zodResolver } from "@hookform/resolvers/zod";
 

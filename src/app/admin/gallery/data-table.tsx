@@ -31,7 +31,7 @@ import {
 } from "@tanstack/react-table";
 import { CirclePlus } from "lucide-react";
 import * as React from "react";
-import { AddEventForm } from "./add-event-form";
+import { AddEventForm } from "../../../components/admin/event/EventAdd";
 
 interface DataTableProps<TData, TValue> {
 	columns: ColumnDef<TData, TValue>[];

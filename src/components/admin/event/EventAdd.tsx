@@ -21,25 +21,19 @@ import { cn } from "@/lib/utils";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
-import { createEvent } from "@/components/prisma-functions";
 import {
 	Popover,
 	PopoverContent,
 	PopoverTrigger,
 } from "@/components/ui/popover";
-
-const formSchema = z.object({
-	event_name: z.string(),
-	event_date: z.date(),
-	location: z.string(),
-	event_desc: z.string(),
-	thumbnail: z.string(),
-	semester: z.string(),
-});
+import { EventSchema } from "@/lib/forms/admin";
+import { useRouter } from "next/navigation";
 
 export function AddEventForm() {
-	const form = useForm<z.infer<typeof formSchema>>({
-		resolver: zodResolver(formSchema),
+	const router = useRouter();
+
+	const form = useForm<z.infer<typeof EventSchema>>({
+		resolver: zodResolver(EventSchema),
 		defaultValues: {
 			event_name: "",
 			event_date: null,
@@ -50,17 +44,25 @@ export function AddEventForm() {
 		},
 	});
 
-	async function onSubmit(values: z.infer<typeof formSchema>) {
-		const createdEvent = await createEvent({
-			event_name: values.event_name,
-			event_date: values.event_date,
-			location: values.location,
-			event_desc: values.event_desc,
-			thumbnail: values.thumbnail,
-			semester: values.semester,
-		});
+	async function onSubmit(values: z.infer<typeof EventSchema>) {
+		try {
+			const response = await fetch("/api/gallery", {
+				method: "POST",
+				headers: {
+					Content_type: "application.json",
+				},
+				body: JSON.stringify(values),
+			});
 
-		console.log(createdEvent);
+			const result = await response.json();
+
+			if (response.ok) {
+				router.refresh();
+				console.log(result)
+			}
+		} catch (error) {
+			console.error("Error: ", error);
+		}
 	}
 
 	return (

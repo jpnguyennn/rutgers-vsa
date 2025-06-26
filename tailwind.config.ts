@@ -102,6 +102,9 @@ const config = {
 			lg: {
 				min: "1008px",
 			},
+			xl: {
+				min: "1260px"
+			}
 		},
 	},
 	plugins: [require("tailwindcss-animate")],

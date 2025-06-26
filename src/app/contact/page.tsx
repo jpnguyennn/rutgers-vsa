@@ -1,7 +1,10 @@
+"use client"
+
 import SocialsArea from "@/components/contact/SocialsArea";
-import { getBoardMemberData } from "@/components/prisma-functions";
+import { BoardMember } from "@/lib/interfaces/admin";
 import "@/styles/contact.css";
-import React from "react";
+import { NextResponse } from "next/server";
+import React, { useEffect, useState } from "react";
 
 function ContactEmail({ email }) {
 	const build_link = "mailto: " + email;
@@ -9,12 +12,30 @@ function ContactEmail({ email }) {
 	return <a href={build_link}>{email}</a>;
 }
 
-export default async function Contact() {
-	const boardMemberData = await getBoardMemberData();
+export default function Contact() {
+	const [boardMembers, setBoardMembers] = useState<BoardMember[]>([]);
 
-	boardMemberData.sort(function (a, b) {
-		return a.positional_id - b.positional_id;
-	});
+	useEffect(() => {
+		const fetchBoardMembers = async () => {
+			try {
+				const response = await fetch("/api/board");
+
+				if (!response.ok) {
+					return NextResponse.json(
+						{ error: "Could not fetch board members" },
+						{ status: 400 }
+					);
+				}
+
+				const data = await response.json();
+				setBoardMembers(data);
+			} catch (error) {
+				console.log(error);
+			}
+		};
+
+		fetchBoardMembers();
+	}, []);
 
 	return (
 		<>
@@ -22,7 +43,10 @@ export default async function Contact() {
 				<h1>Contact Us</h1>
 			</div>
 			<div className="justify-center items-center flex flex-col lg:flex-row">
-				<div className="mx-8 lg:my-8 lg:inline-flex" id="contact_container">
+				<div
+					className="mx-8 lg:my-8 lg:inline-flex"
+					id="contact_container"
+				>
 					<div
 						className="mx-16 my-0 sm:border-b-[0.25rem] lg:border-r-[0.25rem] border-[rgb(156, 156, 156)] border-solid"
 						id="column_left"
@@ -30,10 +54,12 @@ export default async function Contact() {
 						<div className="p-20 text-center" id="emails">
 							<p className="mb-8">
 								<strong>For general information:</strong>{" "}
-								<a href="mailto:rutgersvsa@gmail.com">rutgersvsa@gmail.com</a>
+								<a href="mailto:rutgersvsa@gmail.com">
+									rutgersvsa@gmail.com
+								</a>
 							</p>
 
-							{boardMemberData.map((item) => (
+							{boardMembers.map((item) => (
 								<p key={item.positional_id}>
 									<strong>{item.full_name}: </strong>
 									<ContactEmail email={item.vsa_email} />

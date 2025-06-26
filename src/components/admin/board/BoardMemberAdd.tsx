@@ -17,10 +17,12 @@ import {
 import { Input } from "../../ui/input";
 import { Textarea } from "../../ui/textarea";
 
-import { BoardMemberSchema } from "@/components/forms/admin_board_member";
-import { createBoardMember } from "../../prisma-functions";
+import { BoardMemberSchema } from "@/lib/forms/admin";
+import { useRouter } from "next/navigation";
 
 export function AddBoardMemberForm() {
+	const router = useRouter();
+
 	const form = useForm<z.infer<typeof BoardMemberSchema>>({
 		resolver: zodResolver(BoardMemberSchema),
 		defaultValues: {
@@ -33,25 +35,30 @@ export function AddBoardMemberForm() {
 			vsa_email: "",
 			year: 0,
 			major: "",
+			minor: "",
 			why_vsa: "",
 		},
 	});
 
 	async function onSubmit(values: z.infer<typeof BoardMemberSchema>) {
-		const createdBoardMember = await createBoardMember({
-			positional_id: values.positional_id,
-			full_name: values.full_name,
-			position: values.position,
-			photo_url: values.photo_url,
-			facebook: values.facebook,
-			instagram: values.instagram,
-			vsa_email: values.vsa_email,
-			year: values.year,
-			major: values.major,
-			why_vsa: values.why_vsa,
-		});
+		try {
+			const response = await fetch("/api/board", {
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json",
+				},
+				body: JSON.stringify(values),
+			});
 
-		console.log(createdBoardMember);
+			const result = await response.json();
+
+			if (response.ok) {
+				router.refresh();
+				console.log(result)
+			}
+		} catch (error) {
+			console.error("Error:", error);
+		}
 	}
 
 	return (

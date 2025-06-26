@@ -15,3 +15,12 @@ export const BoardMemberSchema = z.object({
    minor: z.string().optional(),
 	why_vsa: z.string(),
 });
+
+export const EventSchema = z.object({
+	event_name: z.string(),
+	event_date: z.date(),
+	location: z.string(),
+	event_desc: z.string(),
+	thumbnail: z.string(),
+	semester: z.string(),
+});
