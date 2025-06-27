@@ -145,7 +145,7 @@ const updateBoardPosition = async (request: NextRequest) => {
 		return NextResponse.json(
 			{
 				message: "Board Position updated successfully",
-				boardMember: boardMember,
+				boardMember,
 			},
 			{
 				status: 200,

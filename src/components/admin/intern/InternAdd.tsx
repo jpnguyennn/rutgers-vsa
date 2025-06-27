@@ -2,6 +2,8 @@
 
 import { zodResolver } from "@hookform/resolvers/zod";
 
+import { InternSchema } from "@/lib/forms/admin";
+import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { Button } from "../../../components/ui/button";
@@ -16,20 +18,11 @@ import {
 } from "../../../components/ui/form";
 import { Input } from "../../../components/ui/input";
 
-import { createIntern } from "../../../components/prisma-functions";
-
-const formSchema = z.object({
-	full_name: z.string(),
-	photo_url: z.string(),
-	facebook: z.string(),
-	instagram: z.string(),
-	year: z.number().or(z.string()).pipe(z.coerce.number()),
-	major: z.string(),
-});
-
 export function AddInternForm() {
-	const form = useForm<z.infer<typeof formSchema>>({
-		resolver: zodResolver(formSchema),
+	const router = useRouter();
+
+	const form = useForm<z.infer<typeof InternSchema>>({
+		resolver: zodResolver(InternSchema),
 		defaultValues: {
 			full_name: "",
 			photo_url: "",
@@ -40,17 +33,25 @@ export function AddInternForm() {
 		},
 	});
 
-	async function onSubmit(values: z.infer<typeof formSchema>) {
-		const createdIntern = await createIntern({
-			full_name: values.full_name,
-			photo_url: values.photo_url,
-			facebook: values.facebook,
-			instagram: values.instagram,
-			year: values.year,
-			major: values.major,
-		});
+	async function onSubmit(values: z.infer<typeof InternSchema>) {
+		try {
+			const response = await fetch("/api/interns", {
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json",
+				},
+				body: JSON.stringify(values),
+			});
 
-		console.log(createdIntern)
+			const result = await response.json();
+
+			if (response.ok) {
+				router.refresh();
+				console.log(result);
+			}
+		} catch (error) {
+			console.error("Error: ", error);
+		}
 	}
 
 	return (
@@ -65,7 +66,9 @@ export function AddInternForm() {
 							<FormControl>
 								<Input placeholder="John Doe" {...field} />
 							</FormControl>
-							<FormDescription>Full name of the intern.</FormDescription>
+							<FormDescription>
+								Full name of the intern.
+							</FormDescription>
 							<FormMessage />
 						</FormItem>
 					)}
@@ -93,7 +96,9 @@ export function AddInternForm() {
 							<FormControl>
 								<Input placeholder="john.doe" {...field} />
 							</FormControl>
-							<FormDescription>Facebook handle of intern.</FormDescription>
+							<FormDescription>
+								Facebook handle of intern.
+							</FormDescription>
 							<FormMessage />
 						</FormItem>
 					)}
@@ -107,7 +112,9 @@ export function AddInternForm() {
 							<FormControl>
 								<Input placeholder="john.doe" {...field} />
 							</FormControl>
-							<FormDescription>Instagram handle of intern.</FormDescription>
+							<FormDescription>
+								Instagram handle of intern.
+							</FormDescription>
 							<FormMessage />
 						</FormItem>
 					)}
@@ -119,9 +126,15 @@ export function AddInternForm() {
 						<FormItem>
 							<FormLabel>Year</FormLabel>
 							<FormControl>
-								<Input type="number" placeholder="2026" {...field} />
+								<Input
+									type="number"
+									placeholder="2026"
+									{...field}
+								/>
 							</FormControl>
-							<FormDescription>Graduating year of the intern.</FormDescription>
+							<FormDescription>
+								Graduating year of the intern.
+							</FormDescription>
 							<FormMessage />
 						</FormItem>
 					)}
@@ -133,7 +146,10 @@ export function AddInternForm() {
 						<FormItem>
 							<FormLabel>Major(s)</FormLabel>
 							<FormControl>
-								<Input placeholder="Computer Science" {...field} />
+								<Input
+									placeholder="Computer Science"
+									{...field}
+								/>
 							</FormControl>
 							<FormDescription>
 								Major(s) belonging to the intern.

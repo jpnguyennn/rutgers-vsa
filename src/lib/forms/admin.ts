@@ -12,8 +12,17 @@ export const BoardMemberSchema = z.object({
 	vsa_email: z.string(),
 	year: z.number().or(z.string()).pipe(z.coerce.number()),
 	major: z.string(),
-   minor: z.string().optional(),
+	minor: z.string().optional(),
 	why_vsa: z.string(),
+});
+
+export const InternSchema = z.object({
+	full_name: z.string(),
+	photo_url: z.string(),
+	facebook: z.string(),
+	instagram: z.string(),
+	year: z.number().or(z.string()).pipe(z.coerce.number()),
+	major: z.string(),
 });
 
 export const EventSchema = z.object({

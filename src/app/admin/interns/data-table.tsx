@@ -1,5 +1,6 @@
 "use client";
 
+import { AddInternForm } from "@/components/admin/intern/InternAdd";
 import {
 	Table,
 	TableBody,
@@ -41,9 +42,8 @@ export function DataTable<TData, TValue>({
 }: DataTableProps<TData, TValue>) {
 	const [sorting, setSorting] = React.useState<SortingState>([]);
 	const [rowSelection, setRowSelection] = React.useState({});
-	const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
-		[]
-	);
+	const [columnFilters, setColumnFilters] =
+		React.useState<ColumnFiltersState>([]);
 
 	const table = useReactTable({
 		data,
@@ -68,21 +68,26 @@ export function DataTable<TData, TValue>({
 				<Input
 					placeholder="Search by name..."
 					value={
-						(table.getColumn("full_name")?.getFilterValue() as string) ?? ""
+						(table
+							.getColumn("full_name")
+							?.getFilterValue() as string) ?? ""
 					}
 					onChange={(event) =>
-						table.getColumn("full_name")?.setFilterValue(event.target.value)
+						table
+							.getColumn("full_name")
+							?.setFilterValue(event.target.value)
 					}
 					className="max-w-sm"
 				/>
 				<Sheet>
 					<SheetTrigger>
-						<Button variant="outline">Create New Entry</Button>
+						<Button variant="outline">Create New Intern</Button>
 					</SheetTrigger>
 					<SheetContent>
 						<SheetHeader>
-							<SheetTitle>Create New Database Entry</SheetTitle>
+							<SheetTitle>Create New Intern</SheetTitle>
 						</SheetHeader>
+						<AddInternForm />
 					</SheetContent>
 				</Sheet>
 			</div>
@@ -98,7 +103,8 @@ export function DataTable<TData, TValue>({
 											{header.isPlaceholder
 												? null
 												: flexRender(
-														header.column.columnDef.header,
+														header.column.columnDef
+															.header,
 														header.getContext()
 												  )}
 										</TableHead>
@@ -112,7 +118,9 @@ export function DataTable<TData, TValue>({
 							table.getRowModel().rows.map((row) => (
 								<TableRow
 									key={row.id}
-									data-state={row.getIsSelected() && "selected"}
+									data-state={
+										row.getIsSelected() && "selected"
+									}
 								>
 									{row.getVisibleCells().map((cell) => (
 										<TableCell key={cell.id}>
