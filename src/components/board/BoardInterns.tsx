@@ -3,7 +3,7 @@
 import { Intern } from "@/lib/interfaces/admin";
 import "@/styles/board.css";
 import { useEffect, useState } from "react";
-import BoardPort from "./BoardPort";
+import InternPort from "./InternPort";
 
 const BoardInterns = () => {
 	const [interns, setInterns] = useState<Intern[]>([]);
@@ -42,11 +42,8 @@ const BoardInterns = () => {
 			<div className="p-10 items-center grid" id="board">
 				{interns.map((intern) => (
 					<div key={intern.id}>
-						<BoardPort
-							img_url={`https://res.cloudinary.com/rutgers-vsa/${intern.photo_url}`}
-							fullname={intern.full_name}
-							position="Intern"
-							//insta={intern.instagram}
+						<InternPort
+							member={intern}
 						/>
 					</div>
 				))}
