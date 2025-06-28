@@ -54,7 +54,7 @@ export function AddBoardMemberForm() {
 
 			if (response.ok) {
 				router.refresh();
-				console.log(result)
+				console.log(result);
 			}
 		} catch (error) {
 			console.error("Error:", error);
@@ -75,6 +75,11 @@ export function AddBoardMemberForm() {
 									type="number"
 									placeholder="0"
 									{...field}
+									onChange={(e) =>
+										field.onChange(
+											parseInt(e.target.value) || 0
+										)
+									}
 								/>
 							</FormControl>
 							<FormDescription>
@@ -197,6 +202,11 @@ export function AddBoardMemberForm() {
 									type="number"
 									placeholder="2026"
 									{...field}
+									onChange={(e) =>
+										field.onChange(
+											parseInt(e.target.value) || 0
+										)
+									}
 								/>
 							</FormControl>
 							<FormDescription>

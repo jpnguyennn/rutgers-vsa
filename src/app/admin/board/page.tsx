@@ -1,3 +1,5 @@
+"use client";
+
 import EditBoardMemberAccordion from "@/components/admin/board/BoardMemberCollapsible";
 import { Button } from "@/components/ui/button";
 import { ScrollBar } from "@/components/ui/scroll-area";
@@ -13,7 +15,7 @@ import { AddBoardMemberForm } from "@/components/admin/board/BoardMemberAdd";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { CirclePlus } from "lucide-react";
 
-export default async function BoardDatabase() {
+export default function BoardDatabase() {
 	return (
 		<div>
 			<h1>Edit Board Members Database</h1>
