@@ -12,7 +12,6 @@ import {
 	AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
 import { Trash } from "lucide-react";
-import { NextResponse } from "next/server";
 import { toast } from "sonner";
 
 const deleteBoardPosition = async (position_id: number) => {
@@ -28,13 +27,10 @@ const deleteBoardPosition = async (position_id: number) => {
 		if (result.ok) {
 			const date = new Date();
 			toast("Position Successfully Deleted", {
-				description: `Created at: ${date.toISOString}`,
+				description: `Created at: ${date.toISOString()}`,
 			});
 		} else {
-			return NextResponse.json(
-				{ error: "Could not successfully delete event..." },
-				{ status: 409 }
-			);
+			throw new Error("Could not successfully delete event...")
 		}
 	} catch (error) {
 		console.error("Error:", error);
