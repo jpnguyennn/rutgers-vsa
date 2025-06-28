@@ -28,8 +28,12 @@ import {
 } from "@/components/ui/popover";
 import { EventSchema } from "@/lib/forms/admin";
 import { useRouter } from "next/navigation";
+import { useState } from "react";
 
 export function AddEventForm() {
+	const [previewUrl, setPreviewUrl] = useState<string | null>(null);
+	const [isSubmitting, setIsSubmitting] = useState(false);
+
 	const router = useRouter();
 
 	const form = useForm<z.infer<typeof EventSchema>>({
@@ -45,23 +49,35 @@ export function AddEventForm() {
 	});
 
 	async function onSubmit(values: z.infer<typeof EventSchema>) {
+		setIsSubmitting(true);
+
 		try {
+			const eventData = new FormData();
+			eventData.append("event_name", values.event_name);
+			eventData.append("event_date", values.event_date.toISOString());
+			eventData.append("location", values.location);
+			eventData.append("event_desc", values.event_desc);
+			eventData.append("semester", values.semester);
+
+			if (values.thumbnail instanceof File) {
+				eventData.append("thumbnail", values.thumbnail);
+			}
+
 			const response = await fetch("/api/gallery", {
 				method: "POST",
-				headers: {
-					Content_type: "application.json",
-				},
-				body: JSON.stringify(values),
+				body: eventData,
 			});
 
 			const result = await response.json();
 
 			if (response.ok) {
 				router.refresh();
-				console.log(result)
+				console.log(result);
 			}
 		} catch (error) {
 			console.error("Error: ", error);
+		} finally {
+			setIsSubmitting(false);
 		}
 	}
 
@@ -175,19 +191,117 @@ export function AddEventForm() {
 				<FormField
 					control={form.control}
 					name="thumbnail"
-					render={({ field }) => (
-						<FormItem>
-							<FormLabel>Thumbnail</FormLabel>
-							<FormControl>
-								<Input placeholder="image/..." {...field} />
-							</FormControl>
-							<FormDescription>
-								Paste the link to the cloudinary url of the
-								image.
-							</FormDescription>
-							<FormMessage />
-						</FormItem>
-					)}
+					render={({ field: { onChange, ...fieldProps } }) => {
+						// eslint-disable-next-line @typescript-eslint/no-unused-vars
+						const { value, ...inputProps } = fieldProps;
+
+						return (
+							<FormItem>
+								<FormLabel>Event Thumbnail</FormLabel>
+								<FormControl>
+									<div className="space-y-4">
+										<div className="flex items-center justify-center w-full">
+											<label className="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 hover:bg-gray-100">
+												{previewUrl ? (
+													<img
+														src={previewUrl}
+														alt="Event thumbnail preview"
+														className="w-full h-full object-cover rounded-lg"
+													/>
+												) : (
+													<div className="flex flex-col items-center justify-center pt-5 pb-6">
+														<svg
+															className="w-8 h-8 mb-4 text-gray-500"
+															fill="none"
+															stroke="currentColor"
+															viewBox="0 0 24 24"
+														>
+															<path
+																strokeLinecap="round"
+																strokeLinejoin="round"
+																strokeWidth="2"
+																d="M12 6v6m0 0v6m0-6h6m-6 0H6"
+															/>
+														</svg>
+														<p className="mb-2 text-sm text-gray-500">
+															<span className="font-semibold">
+																Click to upload
+															</span>{" "}
+															event thumbnail
+														</p>
+														<p className="text-xs text-gray-500">
+															PNG, JPG or WEBP
+															(MAX. 5MB)
+														</p>
+													</div>
+												)}
+												<input
+													type="file"
+													className="hidden"
+													accept="image/*"
+													name={fieldProps.name}
+													ref={fieldProps.ref}
+													onBlur={fieldProps.onBlur}
+													onChange={(e) => {
+														const file =
+															e.target.files?.[0];
+														if (file) {
+															// Validate file type
+															if (
+																!file.type.startsWith(
+																	"image/"
+																)
+															) {
+																alert(
+																	"Please select an image file"
+																);
+																return;
+															}
+
+															// Validate file size (5MB limit)
+															if (
+																file.size >
+																5 * 1024 * 1024
+															) {
+																alert(
+																	"File size must be less than 5MB"
+																);
+																return;
+															}
+
+															onChange(file); // Update form value with File object
+
+															// Create preview
+															const reader =
+																new FileReader();
+															reader.onload = (
+																e
+															) => {
+																setPreviewUrl(
+																	e.target
+																		?.result as string
+																);
+															};
+															reader.readAsDataURL(
+																file
+															);
+														}
+													}}
+													disabled={isSubmitting}
+												/>
+											</label>
+										</div>
+									</div>
+								</FormControl>
+								<FormDescription>
+									Upload an image file for the event
+									thumbnail. Images will be automatically
+									optimized and stored in Cloudinary.
+								</FormDescription>
+								<FormMessage />
+							</FormItem>
+						);
+					}}
 				/>
 				<FormField
 					control={form.control}
@@ -210,7 +324,9 @@ export function AddEventForm() {
 						</FormItem>
 					)}
 				/>
-				<Button type="submit">Add Entry</Button>
+				<Button type="submit">
+					{isSubmitting ? "Adding Event..." : "Add Event"}
+				</Button>
 			</form>
 		</Form>
 	);
