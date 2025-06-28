@@ -36,6 +36,9 @@ const config = {
 					DEFAULT: "hsl(var(--muted))",
 					foreground: "hsl(var(--muted-foreground))",
 				},
+				board: {
+					DEFAULT: "hsl(var(--board-skeleton))"
+				},
 				accent: {
 					DEFAULT: "hsl(var(--accent))",
 					foreground: "hsl(var(--accent-foreground))",

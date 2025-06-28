@@ -41,7 +41,7 @@ function BoardPort({ member }: { member: BoardMember }) {
 					<Dialog>
 						<DialogTrigger>
 							<div
-								className={`flex justify-center items-center mb-10 p-10 bg-white/95 backdrop-blur-sm shadow-2xl border border-white/100 rotate-[--rotation-angle]`}
+								className={`flex justify-center items-center mb-10 p-10 bg-white/95 backdrop-blur-sm shadow-2xl border border-white/100 rotate-[--rotation-angle] transform transition-transform duration-300 ease-in-out hover:scale-105 hover:rotate-0`}
 								id="port_container"
 								style={
 									{

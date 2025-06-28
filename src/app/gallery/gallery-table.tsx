@@ -56,7 +56,7 @@ export default function GalleryTable(full_data) {
 									} as React.CSSProperties
 								}
 							>
-								<Link href={`/`}>
+								<Link href={`/gallery/${item.id}`}>
 									<GalleryPhotocard
 										event_name={item.event_name}
 										date={item.event_date}

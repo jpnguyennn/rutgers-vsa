@@ -1,5 +1,3 @@
-import React from "react";
-
 import BoardInterns from "./BoardInterns";
 import BoardMain from "./BoardMain";
 
