@@ -22,7 +22,7 @@ export default async function EventPage({
 		<div className="p-20">
 			<GalleryBackButton />
 			<div className="flex-cols lg:flex">
-				<Image src={`https://res.cloudinary.com/rutgers-vsa/${event.thumbnail}`} alt={event.event_name} width={500} height={500} className="rounded-xl"/>
+				<Image src={event.thumbnailURL} alt={event.event_name} width={500} height={500} className="rounded-xl"/>
 				<div>{event.event_name}</div>
 			</div>
 			
