@@ -26,13 +26,14 @@ export interface Intern {
 	minor?: string;
 }
 
-export interface Event {
+export interface GalleryEvent {
 	id: number;
 
 	event_name: string;
-	event_data: Date;
+	event_date: Date;
 	event_desc: string;
-	thumbnail: string;
+	thumbnailURL: string;
+	thumbnailPublicURL: string;
 	semester: string;
 	location: string;
 }

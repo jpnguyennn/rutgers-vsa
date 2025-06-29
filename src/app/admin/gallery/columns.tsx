@@ -9,9 +9,10 @@ import {
 	DropdownMenuLabel,
 	DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import prisma from "@/lib/prisma";
 import { ColumnDef } from "@tanstack/react-table";
 import { ArrowUpDown, MoreHorizontal } from "lucide-react";
+import { NextResponse } from "next/server";
+import { toast } from "sonner";
 
 // Create new type GalleryItem with the following fields and matching with the Prisma schema
 export type GalleryItem = {
@@ -20,9 +21,37 @@ export type GalleryItem = {
 	event_date: Date;
 	location: string;
 	event_desc: string;
-	thumbnail: string;
+	thumbnailURL: string;
+	thumbnailPublicURL: string;
 	semester: string;
 };
+
+async function handleDelete(event_id: number) {
+	try {
+		const response = await fetch("/api/gallery", {
+			method: "DELETE",
+			headers: { "Content-Type": "application / json" },
+			body: JSON.stringify({ id: event_id }),
+		});
+
+		const result = await response.json();
+
+		if (result.ok) {
+			const date = new Date();
+			toast("Event Successfully Deleted", {
+				description: `Created at: ${date.toISOString}`,
+			});
+		} else {
+			return NextResponse.json(
+				{ error: "Could not successfully delete event..." },
+				{ status: 409 }
+			);
+		}
+	} catch (error) {
+		console.error("Error:", error);
+	}
+}
+
 
 // Creating new columns for the table, matching components with the Header titles of each column
 export const columns: ColumnDef<GalleryItem>[] = [
@@ -43,7 +72,9 @@ export const columns: ColumnDef<GalleryItem>[] = [
 			return (
 				<Button
 					variant="ghost"
-					onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+					onClick={() =>
+						column.toggleSorting(column.getIsSorted() === "asc")
+					}
 				>
 					Event Date
 					<ArrowUpDown className="ml-2 h-4 w-4" />
@@ -52,12 +83,13 @@ export const columns: ColumnDef<GalleryItem>[] = [
 		},
 	},
 	{ accessorKey: "location", header: "Event Location" },
-	{ accessorKey: "thumbnail", header: "Photo URL" },
+	{ accessorKey: "thumbnailURL", header: "Photo URL" },
+	{ accessorKey: "thumbnailPublicURL", header: "Photo Public URL" },
 	{ accessorKey: "semester", header: "Semester" },
 	{
 		id: "actions",
 		cell: ({ row }) => {
-			const member = row.original;
+			const event = row.original;
 
 			return (
 				<DropdownMenu>
@@ -71,11 +103,7 @@ export const columns: ColumnDef<GalleryItem>[] = [
 						<DropdownMenuLabel>Actions</DropdownMenuLabel>
 						<DropdownMenuItem
 							onClick={async () =>
-								await prisma.galleryItem.delete({
-									where: {
-										id: member.id,
-									},
-								})
+								handleDelete(event.id)
 							}
 						>
 							Delete Event

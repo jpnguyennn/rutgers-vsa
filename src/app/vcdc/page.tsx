@@ -41,7 +41,7 @@ const VCDC = () => {
 								href="https://www.youtube.com/@RutgersVCDC/videos"
 								target="_blank"
 							>
-								<div className="border-white border-2 hover:bg-white hover:text-black ease-in-out text-[1.5rem]">
+								<div className="border-white border-2 hover:bg-white hover:text-black text-[1.5rem] duration-200 rounded-xl">
 									PAST PERFORMANCES
 								</div>
 							</a>

@@ -50,7 +50,7 @@ export default function EditBoardMemberAccordion() {
 								<AccordionTrigger className="flex w-full">
 									<h2 className="text-center">
 										{member.position}
-									</h2>{" "}
+									</h2>
 									<PanelTopOpen className="mr-0 ml-auto" />
 								</AccordionTrigger>
 								<AccordionContent>

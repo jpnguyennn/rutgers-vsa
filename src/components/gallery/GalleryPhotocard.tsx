@@ -24,7 +24,7 @@ const GalleryPhotocard = ({
 				<div className="sticky">
 					<div className="relative" id="event_picture_area">
 						<Image
-							src={`https://res.cloudinary.com/rutgers-vsa/${cover_picture}`}
+							src={cover_picture}
 							alt={event_name}
 							width={300}
 							height={300}

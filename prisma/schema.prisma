@@ -36,22 +36,14 @@ model Intern {
 }
 
 model GalleryItem {
-  id         Int       @id @default(autoincrement())
-  event_name String
-  event_date DateTime?
-  event_desc String?
-  thumbnail  String
-  semester   String
-  location   String?
-}
-
-model UpcomingEvent {
-  id         Int       @id @default(autoincrement())
-  event_name String
-  event_date DateTime?
-  location   String?
-  event_desc String?
-  thumbnail  String
+  id                 Int       @id @default(autoincrement())
+  event_name         String
+  event_date         DateTime?
+  event_desc         String?
+  semester           String
+  location           String?
+  thumbnailPublicURL String?
+  thumbnailURL       String?
 }
 
 model Account {

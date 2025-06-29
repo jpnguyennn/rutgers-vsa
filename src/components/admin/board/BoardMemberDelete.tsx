@@ -12,14 +12,13 @@ import {
 	AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
 import { Trash } from "lucide-react";
-import { NextResponse } from "next/server";
 import { toast } from "sonner";
 
 const deleteBoardPosition = async (position_id: number) => {
 	try {
 		const response = await fetch("/api/board", {
 			method: "DELETE",
-			headers: { "Content-Type": "application / json" },
+			headers: { "Content-Type": "application/json" },
 			body: JSON.stringify({ id: position_id }),
 		});
 
@@ -28,25 +27,28 @@ const deleteBoardPosition = async (position_id: number) => {
 		if (result.ok) {
 			const date = new Date();
 			toast("Position Successfully Deleted", {
-				description: `Created at: ${date.toISOString}`,
+				description: `Created at: ${date.toISOString()}`,
 			});
 		} else {
-			return NextResponse.json(
-				{ error: "Could not successfully delete event..." },
-				{ status: 409 }
-			);
+			toast("Error", {
+				description: "Could not successfully delete position",
+			});
 		}
 	} catch (error) {
 		console.error("Error:", error);
 	}
 };
 
-export default function DeletePosition({ position_id }: { position_id: number }) {
+export default function DeletePosition({
+	position_id,
+}: {
+	position_id: number;
+}) {
 	return (
 		<div className="w-full">
 			<AlertDialog>
 				<AlertDialogTrigger className="p-3 text-gray-500 rounded-2xl hover:bg-red-200 hover:text-red-500 transition-all duration-450 ease-in-out flex cursor-grab">
-               <Trash />
+					<Trash />
 					<p className="font-noto ml-2 text-base">Delete Position</p>
 				</AlertDialogTrigger>
 				<AlertDialogContent>

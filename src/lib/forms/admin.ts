@@ -30,6 +30,6 @@ export const EventSchema = z.object({
 	event_date: z.date(),
 	location: z.string(),
 	event_desc: z.string(),
-	thumbnail: z.string(),
+	thumbnail: z.instanceof(File).optional().or(z.literal("")),
 	semester: z.string(),
 });
