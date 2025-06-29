@@ -1,6 +1,6 @@
 "use client";
 
-// import EditBoardMemberAccordion from "@/components/admin/board/BoardMemberCollapsible";
+import EditBoardMemberAccordion from "@/components/admin/board/BoardMemberCollapsible";
 import { Button } from "@/components/ui/button";
 import { ScrollBar } from "@/components/ui/scroll-area";
 import {
@@ -11,7 +11,7 @@ import {
 	SheetTrigger,
 } from "@/components/ui/sheet";
 
-import { AddBoardMemberForm } from "@/components/admin/board/BoardMemberAdd";
+// import { AddBoardMemberForm } from "@/components/admin/board/BoardMemberAdd";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { CirclePlus } from "lucide-react";
 
@@ -36,13 +36,13 @@ export default function BoardDatabase() {
 								<SheetHeader>
 									<SheetTitle>Create New Position</SheetTitle>
 								</SheetHeader>
-								<AddBoardMemberForm />
+								{/* <AddBoardMemberForm /> */}
 							</div>
 							<ScrollBar orientation="vertical" />
 						</ScrollArea>
 					</SheetContent>
 				</Sheet>
-				{/* <EditBoardMemberAccordion /> */}
+				<EditBoardMemberAccordion />
 			</div>
 		</div>
 	);
