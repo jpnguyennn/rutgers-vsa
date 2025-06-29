@@ -1,6 +1,6 @@
 "use client";
 
-import EditBoardMemberAccordion from "@/components/admin/board/BoardMemberCollapsible";
+// import EditBoardMemberAccordion from "@/components/admin/board/BoardMemberCollapsible";
 import { Button } from "@/components/ui/button";
 import { ScrollBar } from "@/components/ui/scroll-area";
 import {
