@@ -17,7 +17,7 @@ const GalleryPhotocard = ({
 
 	return (
 		<div
-			className="m-10 sticky justify-center items-center align-center"
+			className="my-10 lg:mx-10 sticky justify-center items-center align-center"
 			id="gallery_item"
 		>
 			<div className="bg-white p-8 max-w-2xl" id="gallery_portrait">

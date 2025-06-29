@@ -58,31 +58,37 @@ function BoardPort({ member }: { member: BoardMember }) {
 								/>
 							</div>
 						</DialogTrigger>
-						<DialogContent className="min-w-max rounded-xl">
+						<DialogContent className="lg:min-w-max rounded-xl">
 							<DialogTitle>
 								<p className="text-center text-2xl">
 									{member.position}
 								</p>
 							</DialogTitle>
-							<div className="flex-col max-w-full lg:flex lg:flex-row">
-								<div className="lg:mr-10 min-w-max">
-									<Image
-										src={`https://res.cloudinary.com/rutgers-vsa/${member.photo_url}`}
-										alt={member.full_name}
-										width={300}
-										height={300}
-										className="w-full rounded-lg"
-									/>
+							<div className="flex-col lg:max-w-full lg:flex lg:flex-row">
+								<div className="lg:mr-10 lg:min-w-max justify-center items-center">
+									<div className="sm:max-w-[275px] mx-auto">
+										<Image
+											src={`https://res.cloudinary.com/rutgers-vsa/${member.photo_url}`}
+											alt={member.full_name}
+											width={300}
+											height={300}
+											className="w-full rounded-lg"
+										/>
+									</div>
 								</div>
 								<div className="mt-5 lg:mt-0 max-w-sm lg:min-w-min lg:max-w-2xl">
-									<h1 className="whitespace-nowrap">
+									<h1 className="sm:text-[2.5rem] whitespace-nowrap">
 										{member.full_name}
 									</h1>
-									<div className="mt-5">
-										<h2>Class: {member.year}</h2>
-										<h2>Major: {member.major}</h2>
+									<div className="mt-2 lg:mt-5">
+										<h2 className="sm:text-[1rem]">
+											Class: {member.year}
+										</h2>
+										<h2 className="sm:text-[1rem]">
+											Major: {member.major}
+										</h2>
 										{member.minor !== "" && (
-											<h2>Minor: {member.minor}</h2>
+											<h2 className="sm:text-[1rem]">Minor: {member.minor}</h2>
 										)}
 										<div className="flex mt-2">
 											<Link
@@ -103,7 +109,7 @@ function BoardPort({ member }: { member: BoardMember }) {
 
 									<Separator className="my-5" />
 									<h2>Why VSA?</h2>
-									<p className="whitespace-normal">
+									<p className="sm:text-[.8rem] whitespace-normal">
 										{member.why_vsa}
 									</p>
 								</div>

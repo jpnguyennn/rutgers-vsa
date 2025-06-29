@@ -16,10 +16,10 @@ const VCDC = () => {
 				</div>
 			</div>
 			<div
-				className="my-4 px-4 lg:m-auto min-h-[400px] lg:max-w-4xl content-center text-center"
+				className="my-5 px-4 lg:m-auto min-h-[400px] lg:max-w-4xl content-center text-center"
 				id="about"
 			>
-				<div className="lg:px-20 text-[1.5em]">
+				<div className="lg:px-20 lg:text-[1.5em]">
 					<p className="leading-8">
 						The Vietnamese Cultural Dance Crew (VCDC) is a group
 						dedicated to sharing and promoting Vietnamese culture

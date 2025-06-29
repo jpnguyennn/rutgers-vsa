@@ -43,10 +43,10 @@ export default function Home() {
 				</div>
 
 				<div
-					className="px-4 lg:m-auto min-h-[600px] lg:max-w-4xl content-center text-center"
+					className="px-4 my-5 lg:m-auto min-h-[600px] lg:max-w-4xl content-center text-center"
 					id="about"
 				>
-					<div className="lg:px-20 text-[1.25rem]">
+					<div className="lg:px-20 lg:text-[1.25rem]">
 						<p className="leading-8">
 							The Rutgers Vietnamese Student Association&apos;s (VSA)
 							mission is to promote awareness and appreciation of
