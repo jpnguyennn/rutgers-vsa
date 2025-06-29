@@ -15,6 +15,8 @@ import { AddBoardMemberForm } from "@/components/admin/board/BoardMemberAdd";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { CirclePlus } from "lucide-react";
 
+export const dynamic = "force-static";
+
 export default function BoardDatabase() {
 	return (
 		<div>
