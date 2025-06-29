@@ -42,7 +42,7 @@ export default function BoardDatabase() {
 						</ScrollArea>
 					</SheetContent>
 				</Sheet>
-				<EditBoardMemberAccordion />
+				{/* <EditBoardMemberAccordion /> */}
 			</div>
 		</div>
 	);
