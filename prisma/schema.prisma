@@ -44,6 +44,8 @@ model GalleryItem {
   location           String?
   thumbnailPublicURL String?
   thumbnailURL       String?
+  getInvolvedURL     String?
+  instagramURL       String?
 }
 
 model Account {

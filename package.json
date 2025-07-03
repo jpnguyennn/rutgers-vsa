@@ -22,7 +22,7 @@
     "@neondatabase/serverless": "^0.9.3",
     "@next/mdx": "15.3.4",
     "@prisma/adapter-neon": "^6.10.1",
-    "@prisma/client": "^6.10.1",
+    "@prisma/client": "^6.11.0",
     "@radix-ui/react-accordion": "^1.2.11",
     "@radix-ui/react-alert-dialog": "^1.1.14",
     "@radix-ui/react-aspect-ratio": "^1.0.3",
@@ -73,7 +73,7 @@
   "devDependencies": {
     "@react-hook/window-size": "^3.1.1",
     "babel-plugin-superjson-next": "^0.4.5",
-    "prisma": "^6.10.1",
+    "prisma": "^6.11.0",
     "react-youtube": "^10.1.0",
     "superjson": "^1.13.3"
   },

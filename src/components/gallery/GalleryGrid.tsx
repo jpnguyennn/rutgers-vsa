@@ -5,6 +5,7 @@ import { GalleryEvent } from "@/lib/interfaces/admin";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { Button } from "../ui/button";
 
 export default function GalleryGrid() {
 	const [gallery, setGallery] = useState<GalleryEvent[]>([]);
@@ -116,6 +117,16 @@ export default function GalleryGrid() {
 					<ChevronRight className="w-6 h-6 text-red-600" />
 				</button>
 			</div>
+			<div className="flex items-center justify-center">
+				<div className="mx-auto">
+					<Link
+						href="https://rutgers.campuslabs.com/engage/organization/vsa"
+						target="_blank"
+					>
+						<Button>GetInvolved</Button>
+					</Link>
+				</div>
+			</div>
 
 			{/* called grid events for the specific semester */}
 			<div
@@ -132,7 +143,9 @@ export default function GalleryGrid() {
 
 						return (
 							<div
-								className={`sm:align-center flex flex-col lg:flex-row w-full md:w-[calc(50%-0.5rem)] lg:w-[calc(33.333%-0.667rem)] xl:w-[calc(25%-0.75rem)] rotate-[--rotation-angle] transform transition-transform duration-300 ease-in-out hover:scale-105 hover:rotate-0 ${transition ? "rotate-0" : ""}`}
+								className={`sm:align-center flex flex-col lg:flex-row w-full md:w-[calc(50%-0.5rem)] lg:w-[calc(33.333%-0.667rem)] xl:w-[calc(25%-0.75rem)] rotate-[--rotation-angle] transform transition-transform duration-300 ease-in-out hover:scale-105 hover:rotate-0 ${
+									transition ? "rotate-0" : ""
+								}`}
 								id="gallery_item_whole"
 								key={item.id}
 								style={
