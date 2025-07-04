@@ -14,6 +14,7 @@ import {
 	DialogTrigger,
 } from "../ui/dialog";
 import { Separator } from "../ui/separator";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
 function BoardPort({ member }: { member: BoardMember }) {
 	const rotation: number = Math.random() * 3 - 1.5;
@@ -94,12 +95,21 @@ function BoardPort({ member }: { member: BoardMember }) {
 											<Link
 												href={`https://www.instagram.com/${member.instagram}`}
 												target="_blank"
-												className=""
+												className="min-w-[40px] min-h-[40px]"
 											>
-												<div className="p-1 px-2 border-2 border-[#C13584] rounded-2xl text-[#C13584] duration-200 hover:bg-[#C13584] hover:text-white">
+												<div className="p-1 px-2 border-2 border-[#C13584] rounded-2xl text-[#C13584] duration-200 hover:bg-[#C13584] hover:text-white flex justify-center items-center">
 													<h2>
 														<FontAwesomeIcon
 															icon={faInstagram}
+														/>
+													</h2>
+												</div>
+											</Link>
+											<Link href={`mailto:${member.vsa_email}`} target="_blank" className="ml-2">
+											<div className="p-1 px-2 border-2 border-[#A9A9A9] rounded-2xl text-[#A9A9A9] duration-200 hover:bg-[#A9A9A9] hover:text-white flex justify-center items-center">
+													<h2>
+														<FontAwesomeIcon
+															icon={faEnvelope}
 														/>
 													</h2>
 												</div>

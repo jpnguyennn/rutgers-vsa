@@ -30,10 +30,6 @@ export default function GalleryDatabase() {
 		fetchEvents();
 	}, []);
 
-	useEffect(() => {
-		console.log(gallery);
-	}, []);
-
 	return (
 		<div>
 			<h1>Edit Gallery Database</h1>
