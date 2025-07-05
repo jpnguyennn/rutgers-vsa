@@ -39,7 +39,7 @@ Visit the live site: [https://ruvsa.vercel.app](https://ruvsa.vercel.app)
 ## Contact
 
 For questions, comments, or maintenance, contact:
-**JohnPaul Nguyen** (Cultural Chair 2023-2025)  
+**JohnPaul Nguyen** (Cultural Chair 2023-2026)  
 [johnpaul.nguyen@rutgers.edu](mailto:johnpaul.nguyen@rutgers.edu)
 
 Or reach out via [Facebook](https://www.facebook.com/VSArutgers/), [Instagram](https://www.instagram.com/rutgers_vsa/), or [Discord](https://discord.gg/HSSAG3Psnd).
