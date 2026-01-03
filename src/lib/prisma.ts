@@ -12,7 +12,7 @@ if (typeof window === "undefined") {
 		prisma = new PrismaClient({ adapter });
 	} else {
 		if (!global.prisma) {
-			global.prisma = new PrismaClient({adapter});
+			global.prisma = new PrismaClient({ adapter });
 		}
 
 		prisma = global.prisma;
